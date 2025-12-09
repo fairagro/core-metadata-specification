@@ -1,10 +1,9 @@
-```mermaid
 ---
 config:
   theme: redux
 ---
 classDiagram
-direction TB
+direction LR
     class PersonOrganization {
 	    - Type* [Person | Organization]
 	    - Name* [Text]
@@ -14,30 +13,40 @@ direction TB
     }
 
     class Place {
+	    - Type [City | Country | State]
+	    - Name [Text]
+	    - Bounding box* [Text]
+	    - Elevation [Text]
+	    - Spatial reference system [Identifier]
     }
 
-    class Crop {
-    }
 
     class CreativeWork {
+	    - Type* [CreativeWork | Article | Book | Poster]
+	    - Title [Text]
+	    - Author [PersonOrganization]
+	    - Contributor [PersonOrganization]
+	    - Identifier* [Identifier]
+	    - URL [URL]
     }
 
     class DefinedTerm {
-	    - Term
-	    - Term URI
-	    - Terminology
-	    - Code
+	    - Term* [Text]
+	    - Term URL [URL]
+	    - Code [Text]
+	    - Term description [Text]
+	    - Terminology [URL]
     }
 
     class Identifier {
-	    - Value
-	    - Scheme
-	    - URI
+	    - Value* [Text]
+	    - Scheme [Text]
+	    - URL* [URL]
     }
 
     class DataCatalog {
-	    - Name
-	    - URL
+	    - Name* [Text]
+	    - URL* [URL]
     }
 
     class Dataset {
@@ -50,23 +59,23 @@ direction TB
 	    - Subject* [DefinedTerm]
 	    - Identifier* [Identifier]
 	    - Keywords* [DefinedTerm]
-      - License* [URL]
-      - URL* [URL]
+	    - License* [URL]
+	    - URL* [URL]
 	    - Spatial coverage [Place]
 	    - Version [Text]
 	    - Format [Text]
-      - Production date [Date | DateTime]
-      - Distribution date [Date | DateTime]
-      - Deposit date [Date | DateTime]
-      - Update date [Date | DateTime]
-      - Language [Text]
-      - Data category [Text]
-      - Access rights [Text]
-      - Source RDI* [DataCatalog]
-      - Has part [Dataset | CreativeWork]
-      - Is part of [Dataset | CreativeWork]
-      - Is based on [Dataset | CreativeWork]
-      - Access type [Boolean]
+	    - Production date [Date | DateTime]
+	    - Distribution date [Date | DateTime]
+	    - Deposit date [Date | DateTime]
+	    - Update date [Date | DateTime]
+	    - Language [Text]
+	    - Data category [Text]
+	    - Access rights [Text]
+	    - Source RDI* [DataCatalog]
+	    - Has part [Dataset | CreativeWork]
+	    - Is part of [Dataset | CreativeWork]
+	    - Is based on [Dataset | CreativeWork]
+	    - Access type [Boolean]
     }
 
     Dataset --> PersonOrganization
@@ -75,6 +84,8 @@ direction TB
     Dataset --> CreativeWork
     Dataset --> DataCatalog
     Dataset --> Place
-    Dataset --> Crop
     PersonOrganization --> Identifier
-```
+    CreativeWork --> PersonOrganization
+    CreativeWork --> Identifier
+    Place --> Identifier
+    DataCatalog --> Identifier
