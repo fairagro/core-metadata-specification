@@ -1,3 +1,4 @@
+```mermaid
 ---
 config:
   theme: redux
@@ -89,3 +90,4 @@ direction LR
     CreativeWork --> Identifier
     Place --> Identifier
     DataCatalog --> Identifier
+```
