@@ -1,4 +1,3 @@
-```mermaid
 ---
 config:
   theme: redux
@@ -63,6 +62,7 @@ direction LR
 	    - License* [URL]
 	    - URL* [URL]
 	    - Spatial coverage [Place]
+			- Temporal coverage [DateTime | Text]
 	    - Version [Text]
 	    - Format [Text]
 	    - Production date [Date | DateTime]
@@ -90,4 +90,3 @@ direction LR
     CreativeWork --> Identifier
     Place --> Identifier
     DataCatalog --> Identifier
-```
