@@ -47,6 +47,7 @@ direction LR
 
     class DataCatalog {
 	    - Name* [Text]
+		- Identifier [Identifier]
 	    - URL* [URL]
     }
 
@@ -63,7 +64,7 @@ direction LR
 	    - License* [URL]
 	    - URL* [URL]
 	    - Spatial coverage [Place]
-			- Temporal coverage [DateTime | Text]
+		- Temporal coverage [DateTime | Text]
 	    - Version [Text]
 	    - Format [Text]
 	    - Production date [Date | DateTime]
