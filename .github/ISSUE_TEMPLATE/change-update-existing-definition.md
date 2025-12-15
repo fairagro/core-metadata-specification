@@ -3,7 +3,7 @@ name: Change/update existing definition
 about: Suggest a change/an update for the definition of an existing type/entity or
   property
 title: Change definition of "insert name of type/entity/property please"
-labels: definition
+labels: definition, update
 assignees: ''
 
 ---
