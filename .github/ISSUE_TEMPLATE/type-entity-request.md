@@ -1,7 +1,7 @@
 ---
 name: Type/entity request
 about: Suggest the addition of a new type/entity
-title: ''
+title: 'Suggest: New type/entity "insert type/entity name please"'
 labels: ''
 assignees: ''
 
