@@ -10,6 +10,9 @@ assignees: ''
 **Which type/entity would you like to suggest?**
 Please describe the suggested type/entity and why you think it would be a useful addition.
 
+**How is the suggested type/entity defined?**
+Please provide an understandable definition of the suggested type/entity.
+
 **Which other types/entities is your suggested type/entity related to?**
 Please describe how the suggested type/entity would fit in the existing types/entities of the framework.
 
