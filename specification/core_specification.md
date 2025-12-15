@@ -1,15 +1,18 @@
 
-# FAIRagro Publication Metadata Set
+# FAIRagro metadata
 Version 1
-11.12.2025
+15.12.2025
 
-##  1. Motivation
+##  1. Introduction and motivation
+FAIRagro offers a metadata framework for publishing research datasets in the agrosystem domain and is meant to be implemented in data publication services as Research Data Infrastructures (RDIs) and data repositories.
 
+For generic metadata, the Publication Metadata Set builds on Schema.org and defines a set of types, properties and cardinalities and links between the types. 
 
+Domain specific metadata is expressed through the Agrischemas framework. It additionaly builds [Bioschemas](https://bioschemas.org/) to add agricultural related information to [Dataset](https://schema.org/Dataset) metadata with a focus on increasing its findability. It uses existing [types](https://bioschemas.org/types/) and [properties](https://schema.org/Property) and recommends semantic concepts to achieve interoperability. It can be implemented in already existing Schema.org interfaces by mapping domain-specific information available in local data/metadata to structures described in this document. **Agrischemas offers a list of recommended types and properties for findability based on this approach.**
 
-The FAIRagro Publication Metadata Set is a metadata schema for publishing research data sets in the agrosystem domain. It defines a core minimal metadata set to make required information available for FAIRagro services such as the FAIRagro Search Hub. It is harmonized with existing generic metadata standards as well as ongoing NFDI wide developments. In combination with Agrischemas, FAIRagros domain-specific metadata approach, it offers a solid foundation for FAIR datasets.
+These two components of FAIRagros metadata approach define a core metadata set to make required information available for FAIRagro services such as the [FAIRagro Search Hub](https://search-hub.fairagro.net/). It is harmonized with existing generic metadata standards as well as ongoing [NFDI](https://www.nfdi.de/) wide developments.
 
-##  2. Metadata concepts
+##  2. Publication Metadata Set
 ```mermaid
 classDiagram
 direction LR
@@ -101,10 +104,11 @@ direction LR
     Place --> Identifier
     DataCatalog --> Identifier
 ```
+**Figure 1:** FAIRagros Publication Metadata Set generic types and their relations to each other. Mandatory properties of each type are marked with a "*".
 
 Cardinalities are defined in relation to their respective concepts. Example: A cardinality of "1" for a property does only apply, if an instance of its related concept exists. This doesn’t necessitate the existence of such an instance.
 
-### 3.1 Dataset
+### 2.1 Dataset
 
 **Definition:** "A body of structured information describing some topic(s) of interest."
 
@@ -119,7 +123,7 @@ Schema.org representation:
 
  1. List item
 
-#### 3.1.1 Title
+#### 2.1.1 Title
 **Definition:** "The main title of the Dataset." (taken from DataVerse)
 **Cardinality:** 1
 **Range:** Text
@@ -131,7 +135,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.2 Alternative title
+#### 2.1.2 Alternative title
 **Definition:** "Either 1) a title commonly used to refer to the Dataset or 2) an abbreviation of the main title.” (taken from DataVerse)." (taken from DataVerse)
 **Cardinality:** 0-n
 **Range:** Text
@@ -142,7 +146,7 @@ Schema.org representation:
 	"https://schema.org/alternativeHeadline": "An alternative title"
 }
 ```
-#### 3.1.3 Author
+#### 2.1.3 Author
 **Definition:** "The entity, e.g. a person or organization, that created the Dataset." (taken from DataVerse)
 **Cardinality:** 1-n
 **Range:** Person/Organization
@@ -168,7 +172,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.4 Point of Contact
+#### 2.1.4 Point of Contact
 **Definition:** "The entity, e.g. a person or organization, that users of the Dataset can contact with questions." (taken from DataVerse)
 **Cardinality:** 1-n
 **Range:** Person/Organization
@@ -189,7 +193,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.5 Contributor
+#### 2.1.5 Contributor
 **Definition:** "The entity, such as a person or organization, responsible for collecting, managing, or otherwise contributing to the development of the Dataset." (taken from DataVerse)
 **Cardinality:** 0-n
 **Range:** Person/Organization
@@ -211,7 +215,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.6 Contributor
+#### 2.1.6 Contributor
 **Definition:** "A summary describing the purpose, nature, and scope of the Dataset." (taken from DataVerse)
 **Cardinality:** 1-n
 **Range:** Text
@@ -222,7 +226,7 @@ Schema.org representation:
   "https://schema.org/description": "An example description"
 }
 ```
-#### 3.1.7 Subject
+#### 2.1.7 Subject
 **Definition:** "The area of study relevant to the Dataset." (taken from DataVerse)
 **Cardinality:** 1-n
 **Range:** DefinedTerm
@@ -237,7 +241,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.8 Identifier
+#### 2.1.8 Identifier
 **Definition:** "A unique identifier for the Dataset (e.g. producer's or repository's identifier)." (changed from DataVerse "otherId" definition)
 **Cardinality:** 1-n
 **Range:** Identifier
@@ -251,7 +255,7 @@ Schema.org representation:
   }
 }
 ```
-#### 3.1.9 Keyword(s)
+#### 2.1.9 Keyword(s)
 **Definition:** "A key term that describes an important aspect of the Dataset and information about any controlled vocabulary used." (taken from DataVerse)
 **Cardinality:** 1-n
 **Range:** DefinedTerm
@@ -265,7 +269,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.10 License
+#### 2.1.10 License
 **Definition:** "License defining the rights to (re-)use the dataset." (taken from DataVerse)
 **Cardinality:** 1
 **Range:** URL
@@ -278,7 +282,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.11 URL
+#### 2.1.11 URL
 **Definition:** "An URL where one can view or access the data in the Dataset, e.g. the webpage of a Research Data Infrastructure." (changed from DataVerse "alternativeURL")
 **Cardinality:** 1
 **Range:** URL
@@ -292,7 +296,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.12 Spatial coverage
+#### 2.1.12 Spatial coverage
 **Definition:** "The spatialCoverage of a Dataset indicates the place(s) which are the focus of the content." (changed from Schema.org "[https://schema.org/spatialCoverage](https://schema.org/spatialCoverage)")
 **Cardinality:** 0-n
 **Range:** Place
@@ -306,7 +310,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.13 Temporal coverage
+#### 2.1.13 Temporal coverage
 **Definition:** "The temporalCoverage of a Dataset indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date." (changed from [https://schema.org/temporalCoverage](https://schema.org/temporalCoverage))
 **Cardinality:** 0-1
 **Range:** Text / DateTime
@@ -317,7 +321,7 @@ Schema.org representation:
   "https://schema.org/temporalCoverage": "2022 - 2023"
 }
 ```
-#### 3.1.14 Version
+#### 2.1.14 Version
 **Definition:** "The version number of the dataset."
 **Cardinality:** 0-1
 **Range:** Text
@@ -329,7 +333,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.15 Format
+#### 2.1.15 Format
 **Definition:** "The file format(s) of the dataset."
 **Cardinality:** 0-n
 **Range:** Text
@@ -341,7 +345,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.16 Production date
+#### 2.1.16 Production date
 **Definition:** "The date when the data were produced (not distributed, published, or archived)." (taken from DataVerse)
 **Cardinality:** 0-1
 **Range:** Date or DateTime (ISO 8601)
@@ -353,7 +357,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.17 Distribution date
+#### 2.1.17 Distribution date
 **Definition:** "The date when the Dataset was made available for distribution/presentation." (taken from DataVerse)
 **Cardinality:** 0-1
 **Range:** Date or DateTime (ISO 8601)
@@ -365,7 +369,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.18 Deposit date
+#### 2.1.18 Deposit date
 **Definition:** "The date when the Dataset was deposited into the repository." (taken from DataVerse)
 **Cardinality:** 0-1
 **Range:** Date or DateTime (ISO 8601)
@@ -375,7 +379,7 @@ Schema.org representation:
 ***WIP***
 ```
 
-#### 3.1.19 Update date
+#### 2.1.19 Update date
 **Definition:** "The date on which the Dataset was most recently modified or when the item's entry was modified " (changed from [https://schema.org/dateModified](https://schema.org/dateModified))
 **Cardinality:** 0-1
 **Range:** Date or DateTime (ISO 8601)
@@ -387,7 +391,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.20 Language
+#### 2.1.20 Language
 **Definition:** "A language that the Dataset's files is written in." (taken from DataVerse)
 **Cardinality:** 0-n
 **Range:** Text
@@ -400,7 +404,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.21 Data category
+#### 2.1.21 Data category
 **Definition:** "A category the dataset belongs to."
 **Cardinality:** 0-n
 **Range:** Text
@@ -411,7 +415,7 @@ Schema.org representation:
 ***WIP***
 ```
 
-#### 3.1.22 Access rights
+#### 2.1.22 Access rights
 **Definition:** "Information about who accesses the resource or an indication of its security status." (taken from [http://purl.org/dc/terms/accessRights](http://purl.org/dc/terms/accessRights))
 **Cardinality:** 0-n
 **Range:** Text
@@ -421,7 +425,7 @@ Schema.org representation:
 ***WIP***
 ```
 
-#### 3.1.23 Source RDI
+#### 2.1.23 Source RDI
 **Definition:** "The original Research Data Infrastructure that the dataset was published by."
 **Cardinality:** 1
 **Range:** DataCatalog
@@ -435,7 +439,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.24 Has part
+#### 2.1.24 Has part
 **Definition:** "Indicates a Dataset or CreativeWork that is part of this item." (changed from [https://schema.org/hasPart](https://schema.org/hasPart))
 **Cardinality:** 0-n
 **Range:** Dataset/CreativeWork
@@ -456,7 +460,7 @@ Schema.org representation:
   }
 }
 ```
-#### 3.1.25 Is part of
+#### 2.1.25 Is part of
 **Definition:** "Indicates a Dataset or CreativeWork that this item." (changed from [https://schema.org/isPartOf](https://schema.org/isPartOf))
 **Cardinality:** 0-n
 **Range:** Dataset/CreativeWork
@@ -478,7 +482,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.26 Is based on
+#### 2.1.26 Is based on
 **Definition:** "A resource from which this Dataset is derived or from which it is a modification or adaptation. " (changed from [https://schema.org/isBasedOn](https://schema.org/isBasedOn))
 **Cardinality:** 0-n
 **Range:** Dataset/CreativeWork
@@ -500,7 +504,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.1.27 Access type
+#### 2.1.27 Access type
 **Definition:** "A flag to signal that the item, event, or place is accessible for free." (taken from [https://schema.org/isAccessibleForFree](https://schema.org/isAccessibleForFree))
 **Cardinality:** 0-1
 **Range:** Boolean
@@ -517,7 +521,7 @@ Schema.org representation:
   "https://schema.org/isAccessibleForFree": "False"
 }
 ```
-#### 3.1.28 Spatial resolution
+#### 2.1.28 Spatial resolution
 **Definition:** "The distance between independent geo measurements."
 **Cardinality:** 0-1
 **Range:** Text
@@ -527,12 +531,12 @@ Schema.org representation:
 ***WIP***
 ```
 
-### 3.2 Person/Organization
+### 2.2 Person/Organization
 **Person definition:** A person (alive, dead, undead, or fictional). (taken from [https://schema.org/Person](https://schema.org/Person))
 
 **Organization definition:** An organization such as a school, NGO, corporation, club, etc. (taken from [https://schema.org/Organization](https://schema.org/Organization))
 
-#### 3.2.1 Type
+#### 2.2.1 Type
 **Definition:** "The distance between independent geo measurements."
 **Cardinality:** 1
 **Range:** [https://schema.org/Person](https://schema.org/Person) / [https://schema.org/Organization](https://schema.org/Organization)
@@ -550,7 +554,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.2.2 Name
+#### 2.2.2 Name
 **Definition:** "The name of the person or the organization." (changed from DataVerse)
 **Cardinality:** 1
 **Range:** Text
@@ -561,7 +565,7 @@ Schema.org representation:
   "https://schema.org/name": "Example name"
 }
 ```
-#### 3.2.3 Affiliation (Person)
+#### 2.2.3 Affiliation (Person)
 **Definition:** "The name of the person or the organization." (changed from DataVerse)
 **Cardinality:** 1
 **Range:** Text
@@ -575,7 +579,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.2.4 Identifier
+#### 2.2.4 Identifier
 **Definition:** "Uniquely identifies a person/organization when paired with an identifier type." (changed from DataVerse)
 **Cardinality:** 1
 **Range:** Identifier
@@ -589,7 +593,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.2.4 E-Mail
+#### 2.2.4 E-Mail
 **Definition:** "A person/organization contact email address." (changed from DataVerse)
 **Cardinality:** 0-1
 **Range:** Text
@@ -601,7 +605,7 @@ Schema.org representation:
 }
 ```
 
-### 3.3 Identifier
+### 2.3 Identifier
 **Definition:** A unique identifier of the an entity (e.g. a Dataset, a Person, an Organization) (changed from [https://www.w3.org/TR/vocab-dcat-3/#Property:resource_identifier](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_identifier))
 
 [Schema.org](http://schema.org) representation:
@@ -610,7 +614,7 @@ Schema.org representation:
   "@type": "https://schema.org/PropertyValue"
 }
 ```
-#### 3.3.1 Value
+#### 2.3.1 Value
 **Definition:** "The value of an identifier."
 **Cardinality:** 1
 **Range:** Text
@@ -622,7 +626,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.3.2 Scheme
+#### 2.3.2 Scheme
 **Definition:** "The type of identifier (e.g. DOI, ORCID)." (changed from Dataverse)
 **Cardinality:** 0-1
 **Range:** Text / URL
@@ -635,7 +639,7 @@ Schema.org representation:
 }
 ```
 
-#### 3.3.3 URL
+#### 2.3.3 URL
 **Definition:** "Resolvable URL of an identifier."
 **Cardinality:** 0-1
 **Range:** URL
@@ -647,7 +651,7 @@ Schema.org representation:
 }
 ```
 
-### 3.4 DefinedTerm
+### 2.4 DefinedTerm
 Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc." (taken from [https://schema.org/DefinedTerm](https://schema.org/DefinedTerm))
 
 [Schema.org](http://schema.org) representation:
@@ -658,7 +662,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 ```
 
 
-#### 3.4.1 Term
+#### 2.4.1 Term
 **Definition:** "A key term that describes important aspects of the Dataset." (taken from Dataverse)
 **Cardinality:** 1
 **Range:** Text
@@ -669,7 +673,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
   "https://schema.org/name": "An example defined term"
 }
 ```
-#### 3.4.2 Term description
+#### 2.4.2 Term description
 **Definition:** "A description/definition of the DefinedTerm. " (changed from [https://schema.org/description](https://schema.org/description))
 **Cardinality:** 0-1
 **Range:** Text
@@ -681,7 +685,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.4.3 Term URL
+#### 2.4.3 Term URL
 **Definition:** "A URL that points to the web presence of the Defined Term" (changed from Dataverse)
 **Cardinality:** 0-1
 **Range:** Text
@@ -693,7 +697,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.4.4 Code
+#### 2.4.4 Code
 **Definition:** ""A code that identifies a term within a terminology." (changed [https://schema.org/termCode](https://schema.org/termCode))"
 **Cardinality:** 0-1
 **Range:** Text
@@ -705,7 +709,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.4.5 Terminology
+#### 2.4.5 Terminology
 **Definition:** "The controlled vocabulary used for the keyword term (e.g. AGROVOC, GEMET)." (changed from Dataverse)
 **Cardinality:** 0-1
 **Range:** URL
@@ -716,7 +720,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
   "https://schema.org/inDefinedTermSet": "http://aims.fao.org/aos/agrovoc"
 }
 ```
-### 3.5 DataCatalog
+### 2.5 DataCatalog
 **Definition:** "A collection of datasets, e.g. a Research Data Infrastructure." (changed from [https://schema.org/DataCatalog](https://schema.org/DataCatalog))
 
 [Schema.org](http://schema.org) representation:
@@ -726,7 +730,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.5.1 Name
+#### 2.5.1 Name
 **Definition:** "The name of a Research Data Infrastructure/DataCatalog."
 **Cardinality:** 1
 **Range:** Text
@@ -738,7 +742,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.5.2 Identifier
+#### 2.5.2 Identifier
 **Definition:** "The Identifier of a Research Data Infrastructure/DataCatalog"
 **Cardinality:** 0-1
 **Range:** Identifier
@@ -751,7 +755,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
   }
 }
 ```
-#### 3.5.3 URL
+#### 2.5.3 URL
 **Definition:** "The URL of a Research Data Infrastructure/DataCatalog."
 **Cardinality:** 1
 **Range:** URL
@@ -763,10 +767,10 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-### 3.6 CreativeWork
+### 2.6 CreativeWork
 **Definition:** "The most generic kind of creative work, including books, movies, photographs, software programs, etc." (taken [https://schema.org/CreativeWork](https://schema.org/CreativeWork) )
 
-#### 3.6.1 Type
+#### 2.6.1 Type
 **Definition:** "The specific type of a creative work (e.g. an article, book)."
 **Cardinality:** 1
 **Range:** [https://schema.org/CreativeWork](https://schema.org/CreativeWork); [https://schema.org/Article](https://schema.org/Article); [https://schema.org/Book](https://schema.org/Book); [https://schema.org/Poster](https://schema.org/Poster)
@@ -798,7 +802,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.6.2 Author
+#### 2.6.2 Author
 **Definition:** "The entity, e.g. a person or organization, that created the CreativeWork" (changed from DataVerse)
 **Cardinality:** 0-n
 **Range:** Person/Organization
@@ -820,7 +824,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.6.3 Contributor
+#### 2.6.3 Contributor
 **Definition:** "The entity, such as a person or organization, responsible for collecting, managing, or otherwise contributing to the development of the CreativeWork" (changed from DataVerse)
 **Cardinality:** 0-n
 **Range:** Person/Organization
@@ -842,7 +846,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.6.4 Title
+#### 2.6.4 Title
 **Definition:** "The main title of a creative work."
 **Cardinality:** 0-1
 **Range:** Text
@@ -853,7 +857,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
   "https://schema.org/name": "Example title"
 }
 ```
-#### 3.6.5 Identifier
+#### 2.6.5 Identifier
 **Definition:** "An identifier of a creative work."
 **Cardinality:** 1
 **Range:** Text
@@ -866,7 +870,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
   }
 }
 ```
-#### 3.6.6 URL
+#### 2.6.6 URL
 **Definition:** "An identifier of a creative work."
 **Cardinality:** 0-1
 **Range:** Text
@@ -878,10 +882,10 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-### 3.7 Place
+### 2.7 Place
 **Definition:** "Entities that have a somewhat fixed, physical extension." (taken from [https://schema.org/Place](https://schema.org/Place))
 
-#### 3.7.1 Type
+#### 2.7.1 Type
 **Definition:** "The specific type of a place (e.g. a city, country, state)."
 **Cardinality:** 0-1
 **Range:** [https://schema.org/City](https://schema.org/City); [https://schema.org/Country](https://schema.org/Country); [https://schema.org/State](https://schema.org/State)
@@ -908,7 +912,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.7.2 Name
+#### 2.7.2 Name
 **Definition:** "The name of a place."
 **Cardinality:** 0-1
 **Range:** Text
@@ -920,7 +924,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
 }
 ```
 
-#### 3.7.3 Bounding box
+#### 2.7.3 Bounding box
 **Definition:** "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character." (taken from [https://schema.org/box](https://schema.org/box))
 **Cardinality:** 1
 **Range:** Text
@@ -935,7 +939,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
   }
 }
 ```
-#### 3.7.4 Elevation
+#### 2.7.4 Elevation
 **Definition:** "Altitude, like elevation, is the distance above sea level."
 **Cardinality:** 0-1
 **Range:** Text
@@ -953,7 +957,7 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
   }
 }
 ```
-#### 3.7.5 Spatial reference system
+#### 2.7.5 Spatial reference system
 **Definition:** "The spatial reference system used for the measured geocoordinates."
 **Cardinality:** 0-1
 **Range:** Identifier
@@ -969,4 +973,208 @@ Definition: "A word, name, acronym, phrase, etc. with a formal definition. Often
   }
 }
 ```
+
+### 3. Agrischemas
+#### 3.1 Design principles and modeling conventions
+Agrischemas aims at efficiently reusing established resources, only extending these where necessary. In general, the framework builds on following modeling conventions:
+- Agrischemas uses a set of existing Schema.org / [Bioschemas](https://bioschemas.org/types/) types to represent its core entities. The corresponding type for each core entity is listed in its chapter. Instances of the core entities are typed via the "@type" property.
+- Instances of the core entities are linked to [Dataset](https://schema.org/Dataset) via the [about](https://schema.org/about) property.
+- For semantic enrichment, instances of the core entities are further typed via the [additionalType](https://schema.org/additionalType) property, referencing specific semantic concepts.
+- Agrischemas makes use of the [additionalProperty](https://schema.org/additionalProperty) property in combination with the [PropertyValue](https://schema.org/PropertyValue) type to construct properties increasing the findability of datasets.
+- By using the [propertyID](https://schema.org/propertyID) property, these constructed properties are semantically enriched.
+- Where possible Agrischemas recommends the use of controlled vocabularies/terminologies for values of properties.
+- If the value of a property is more complex than a string, Agrischemas uses the [valueReference](https://schema.org/valueReference) to provide a link to a semantic concept for the value.
+
+An example metadata instance in Agrischemas could look like this:
+```mermaid
+	flowchart LR;
+	A(["Dataset"]) --"@type"-->B(["Schema.org: Dataset"])
+	A(["Dataset"])--"about"-->C(["Core Entity"])
+	C(["Core Entity x"]) --"@type"-->D(["Schema.org / Bioschemas type"])
+	C(["Core Entity x"]) --"additionalType"-->E(["Type from external vocabulary"])
+	C(["Core Entity x"]) --"additionalProperty"-->G([" "])
+	G([" "])--"@type"-->H(["Schema.org: PropertyValue"])
+	G([" "])--... -->I(["..."])
+```
+**Figure 2:** General structure of domain specific metadata in a Dataset metadata instance in Agrischemas.
+
+- For each property constructed via [additionalProperty](https://schema.org/additionalProperty), following properties are possibily used, to define it:
+	- [name](https://schema.org/name): The name of the property.
+	- [description](https://schema.org/description): A description or definition of the property. This can be cited from terminologies or other semantic resources.
+	- [propertyID](https://schema.org/propertyID): A reference to a semantic concept, e.g. a terminology class or property, that represents the property.
+	- [unitText](https://schema.org/unitText): The unit a property is measured in as a string.
+	- [unitCode](https://schema.org/unitCode): A reference to a semantic concept that represents the unit a property is measured in.
+	- [value](https://schema.org/value): The value of a specific measurement of a property.
+	- [minValue](https://schema.org/minValue): The minimum possible value of a specific measurement of a property.
+	- [maxValue](https://schema.org/maxValue): The maximum possible value of a specific measurement of a property.
+	- [valueReference](https://schema.org/valueReference): A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+
+```mermaid
+flowchart LR;
+A("Constructed property")--"@type"-->B(["Schema.org: PropertyValue"])
+A("Constructed property")--"name"-->C("soil sampling depth")
+A("Constructed property")--"description"-->D("The depth at which a sample of soil is collected during a soil sampling process.")
+A("Constructed property")--"propertyID"-->E("http://purl.obolibrary.org/obo/AGRO_00000701")
+A("Constructed property")--"unitText"-->F("centimeter")
+A("Constructed property")--"unitCode"-->G("http://purl.obolibrary.org/obo/UO_0000015")
+A("Constructed property")--"value"-->H("20")
+A("Constructed property")--"minValue"-->I("0")
+A("Constructed property")--"maxValue"-->J("60")
+```
+**Figure 3:** Soil sampling depth as an example of a constructed property.
+
+#### 3.2 Core entities
+##### 3.2.1 Crop
+**Definition:** Plants cultivated for food, fiber, livestock fodder or other uses, usually sown and harvested during a single agricultural year.
+	- [Definition source](http://aims.fao.org/aos/agrovoc/c_1972)
+- **Type:** [BioSample](https://bioschemas.org/BioSample)
+- **Additional type:** http://purl.obolibrary.org/obo/AGRO_00000325
+
+A crop entity represents a sample of a specific plant or group of plants, sharing the same [taxonomic species](http://aims.fao.org/aos/agrovoc/c_331243), that are described in a dataset.
+
+Agrischemas recommends the following set of constructed properties to describe a crop:
+|ID|name| description |propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary
+|--|--|--|--|--|--|--|--|--|
+|CR_001|species|A group of organisms of common ancestry having common characteristics, that are able to reproduce only among themselves to produce fertile offspring and which are usually geographically distinct. It constitutes the fundamental rank in the taxonomic hierarchy.|http://aims.fao.org/aos/agrovoc/c_331243|/|/|/|/|AGROVOC concepts with the "has taxonomic rank" property with a value of [species](https://agrovoc.fao.org/browse/agrovoc/en/page/c_331243)
+|CR_002|variety|A plant grouping, within a single botanical taxon of the lowest known rank, defined by the reproducible expression of its distinguishing and other genetic characteristics. A formal rank in botanical taxonomic nomenclature|http://aims.fao.org/aos/agrovoc/c_1423211760123|/|/|/|/|/
+|CR_003|sowing date|Date of sowing.|http://aims.fao.org/aos/agrovoc/c_16208|Date|https://schema.org/Date|/|/|/
+|CR_004|harvesting date|Date of harvest.|http://aims.fao.org/aos/agrovoc/c_29464|Date|https://schema.org/Date|/|/|/
+
+For expressing pheontypic traits, we recommend using traits from the [Crop Ontology](https://cropontology.org/). It collects traits for different species in separate ontologies. Please refer to the specific ontology relevant for the species you are describing and express each trait in the following structure:
+```
+{
+  "@context": "https://bioschemas.org/",
+  "@type": "Biosample",
+  "additionalType": "http://aims.fao.org/aos/agrovoc/c_5993",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Plant height",
+      "propertyID": "https://cropontology.org/rdf/CO_321:0000020",
+      "description": "Height of plant from ground to top of spike, excluding awns."
+      "value":"110"
+      "unitText":"centimeter",
+      "unitCode":"http://purl.obolibrary.org/obo/UO_0000015"
+    }
+  ]
+}				
+```
+
+##### 3.2.2 Soil
+ **Definition:** Upper layer of the earth in which plants grow.
+	- [Definition source](http://aims.fao.org/aos/agrovoc/c_7156)
+- **Type:** [Sample](https://bioschemas.org/Sample)
+- **Additional type:** http://aims.fao.org/aos/agrovoc/c_7156
+
+A soil entity represents a specific soil sample, that is described in a dataset, representative for a bigger unit of land.
+
+Agrischemas recommends the following set of constructed properties to describe a soil sample:
+|ID|name| description |propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary
+|--|--|--|--|--|--|--|--|--|
+|SO_001|soil texture|Soil texture (such as loam, sandy loam or clay) refers to the proportion of sand, silt and clay sized particles that make up the mineral fraction of the soil.|http://aims.fao.org/aos/agrovoc/c_7199|/|/|/|/|For USDA soil classification classes, use the following classes: [clay](https://lod.nal.usda.gov/nalt/26755), [silty clay](https://lod.nal.usda.gov/nalt/105830),[sandy clay](https://lod.nal.usda.gov/nalt/105829), [clay loam](https://lod.nal.usda.gov/nalt/26741), [silty clay loam](https://lod.nal.usda.gov/nalt/286875), [sandy clay loam](https://lod.nal.usda.gov/nalt/105828), [loam](https://lod.nal.usda.gov/nalt/50479), [silt loam](https://lod.nal.usda.gov/nalt/63100), [silt](https://lod.nal.usda.gov/nalt/63101), [sandy loam](https://lod.nal.usda.gov/nalt/62359), [loamy sand](https://lod.nal.usda.gov/nalt/105831), [sand](https://lod.nal.usda.gov/nalt/62360)
+|SO_002|reference group|The World Reference Base (WRB) is an international system for classification of soils. It was designed to cater for any soil in the world. WRB has come forth from an initiative of FAO and UNESCO, supported by UNEP and the International Union of Soil Sciences (IUSS).|http://aims.fao.org/aos/agrovoc/c_89f35c33|/|/|/|/|Use subclasses of the AGROVOC ["World Reference Base soil types"](http://aims.fao.org/aos/agrovoc/c_89f35c33) class 
+|SO_003|pH|Soil pH is a measure of the acidity or alkalinity of the soil. A pH value is actually a measure of hydrogen ion concentration. It is a ‘reverse’ scale in that a very acid soil has a low pH and a high hydrogen ion concentration.|http://aims.fao.org/aos/agrovoc/c_34901|/|http://purl.obolibrary.org/obo/UO_0000196|0|14|/
+|SO_004|bulk density|A sufficiently large volume of soil containing a large number of pores, such that the concept of mean global properties is applicable.|http://aims.fao.org/aos/agrovoc/c_7167|g/cm3|http://purl.obolibrary.org/obo/UO_0000084|/|/|/
+|SO_005|sampling depth|The depth at which a sample of soil is collected during a soil sampling process.|http://purl.obolibrary.org/obo/AGRO_00000701|centimeter|http://purl.obolibrary.org/obo/UO_0000015|/|/|/
+|SO_006|available water content|Quantity of water present in the soil and usable by plants, classically defined as the difference between moisture at field capacity and moisture at wilting point.|http://opendata.inrae.fr/thesaurusINRAE/c_6446|milimeter|http://purl.obolibrary.org/obo/UO_0000016|/|/|/
+|SO_007|organic carbon|Soil organic carbon (SOC) refers to the carbon held within the soil and is expressed as a percentage by weight (gC/Kg soil). Climatic shifts in temperature and precipitation have a major influence on the decomposition and amount of SOC stored within an ecosystem and that released into the atmosphere. Globally, the amount of carbon stored in soils is twice the amount that is stored in all terrestrial plants. Soil organic carbon (SOC) is essential for maintaining fertility, water retention, and plant production in terrestrial ecosystems. The amount of SOC stored within an ecosystem, is dependent on the quantity and quality of organic matter returned to the soil matrix, the soils ability to retain organic carbon (a function of texture and caption exchange capacity), and biotic influences of both temperature and precipitation. The global decline in SOC as a result of deforestation, shifting cultivation and arable cropping have made significant contributions to increased levels of atmospheric carbon dioxide (CO2).|http://aims.fao.org/aos/agrovoc/c_389fe908|gC/Kg|/|/|/|/
+|SO_008|total carbon|Content or amount of total carbon in soil, including organic carbon and carbon from lime.|http://aims.fao.org/aos/agrovoc/c_24fb4269|/|/|/|/|
+|SO_009|total nitrogen|Content or amount of total nitrogen in soil.|http://aims.fao.org/aos/agrovoc/c_bdc779f4|/|/|/|/|/
+
+If you want to represent additional soil properties, we recommend using subclasses of the AGROVOC [soil properties](http://aims.fao.org/aos/agrovoc/c_330883) concept.
+
+##### 3.2.3 Plot
+- **Definition:** An area of land, somehow related to a dataset, with a particular ownership, land use, or other characteristic.
+	 - [Definition source](http://aims.fao.org/aos/agrovoc/c_fdfbb37f) 
+- **Type:** [Place](https://schema.org/Place)
+-  **Additional type:** http://aims.fao.org/aos/agrovoc/c_2894
+
+A plot entity represents a single plot that is somehow related to a dataset.
+
+The following, existing properties are recommended to describe a plot:
+|Property|Expected type|Description|Cardinality|Controlled Vocabulary|
+|--|--|--|--|--|
+|name|[Text](https://schema.org/Text)|The name of the place.|MANY|/
+|geo|[GeoShape](https://schema.org/GeoShape)|The geo coordinates of the place.|MANY|/
+
+- For **geo**: The geographical coordinates of a [Place](https://schema.org/Place) should be attached to it through a [GeoShape](https://schema.org/GeoShape) object by using the geo property. The [GeoShape](https://schema.org/GeoShape) type offers the [box](https://schema.org/box) property to attach a bounding box as a [Text](https://schema.org/Text) where the box is expressed as two points separated by a space character. The first point is the lower corner, the second point is the upper corner.
+
+|ID|name| description |propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary
+|--|--|--|--|--|--|--|--|--|
+|PL_001|crop yield|The amount of plant crop (such as cereal, grain or legume) harvested per unit area for a given time.|http://aims.fao.org/aos/agrovoc/c_10176|dt/ha|/|/|/|/
+|PL_002|elevation|Altitude, like elevation, is the distance above sea level.|http://aims.fao.org/aos/agrovoc/c_316|meter|http://purl.obolibrary.org/obo/UO_0000008|/|/|/
+|PL_003|plot size|The size of a specific plot measured in m².|http://aims.fao.org/aos/agrovoc/c_2893|square meter|http://purl.obolibrary.org/obo/UO_0000080|/|/|/
+|PL_004|spatial reference system|A spatial reference system (SRS) or coordinate reference system (CRS) is a framework used to precisely measure locations on the surface of Earth as coordinates.|https://www.commoncoreontologies.org/ont00000275|/|/|/|/|Please use [ESPG codes](https://epsg.io/), e.g. "EPSG:4326" for WGS 84, where possible 
+##### 3.2.4 Sensor
+ - **Definition**: A device, somehow related to a dataset, that observes and measures a physical property of a natural phenomenon or man-made process and converts that measurement into a signal (chemical, electrical or other).
+	 - [Definition source](http://aims.fao.org/aos/agrovoc/c_28279)
+ - **Type:**[Product](https://schema.org/Product)
+ - **Additional type:** [Sensor](http://www.w3.org/ns/sosa/Sensor)
+
+A sensor entity represents a specific sensor, that is described in a dataset, or was used to create measurements in it.
+
+The following, existing properties are recommended to describe a sensor:
+|ID|name| description |propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary
+|--|--|--|--|--|--|--|--|--|
+|SE_001|is hosted by|Relation between a Sensor and the Platform that it is mounted on or hosted by.|https://www.w3.org/TR/vocab-ssn/#SOSAisHostedBy|/|/|/|/|
+|SE_002|activity type|Describes if the sensor is an active or a passive sensor.|/|/|/|/|/|"Active" or "Passive"
+|SE_003|sensor type|Describes what type of information the sensor measures.|/|/|/|/|/|<ul><li>[Radar](http://aims.fao.org/aos/agrovoc/c_24071)</li><li>[LiDAR](http://aims.fao.org/aos/agrovoc/c_c3ea7f1d)</li><li>[Optical sensor](http://aims.fao.org/aos/agrovoc/c_08dded27)</li><li>[Thermal Infrared Sensor](http://opendata.inrae.fr/thesaurusINRAE/c_17410)</li><li>Atmospheric sounder</li></ul>
+|SE_004|band category|Describes if a sensor uses single, multi or hyper spectral bands.|/|/|/|/|/|<ul><li>single-band</li><li>multi-band</li><li>hyper-spectral</li><li> broadband</li></ul>
+|SE_004|spectral band|Describes a specific spectral band of a sensor|/|/|/|/|/|/
+
+##### 3.2.5 Agricultural process
+- **Definition**: A planned process which occurs in an agricultural field.
+	- [Definition source](http://purl.obolibrary.org/obo/AGRO_00002071)
+ - **Type:** [LabProcess](https://bioschemas.org/LabProcess)
+ - **Additional type:** [Agricultural process](http://purl.obolibrary.org/obo/AGRO_00002071)
+
+An agricultural process entity represents a specific agricultural process, that is described in a dataset, or was used was part of its creation.
+
+To express an agricultural process, please create a  [LabProcess](https://bioschemas.org/LabProcess) object in the metadata instance and attach it to a [Dataset](https://schema.org/) object via the https://schema.org/about property. This describes a single execution of the process.
+To describe the protocol that the process follows, please use the [LabProtocol](https://bioschemas.org/LabProtocol) type and attach it to a process via the [executesLabProtocol](https://bioschemas.org/types/LabProcess/0.1-DRAFT#executesLabProtocol) property. Link the [LabProtocol](https://bioschemas.org/LabProtocol) object to one of the recommended resources from this specificiation via the [intendedUse](https://bioschemas.org/types/LabProtocol/0.5-DRAFT#intendedUse) property:
+
+Here you can find an example of the described structure:
+```
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "about": [
+    {
+      "@context": "https://bioschemas.org/",
+      "@type": "LabProcess",
+      "additionalType":"http://purl.obolibrary.org/obo/AGRO_00002071",
+      "executesLabProtocol":
+	      {
+		      "@type": "LabProtocol",
+		      "intendedUse":"http://purl.obolibrary.org/obo/AGRO_00020004"
+		  }
+    }
+  ]
+}
+```
+Use one of the following recommendations as a value for the intendedUse property, if you want to express one of the following standard agricultural processes:
+
+|Process|References|
+|--|--|
+|Irrigation|<ul><li>For general irrigation processes please use http://purl.obolibrary.org/obo/AGRO_00000006</li><li>For more specific types of irrigation, please use one of its respective sub classes.</li></ul>|
+|Tillage| <ul><li>For general tillage processes please use http://purl.obolibrary.org/obo/AGRO_01000015</li><li>For more specific types of tillage, please use one of its respective sub classes.</li></ul>|
+|Pest control|<ul><li>For general pest control processes please use http://purl.obolibrary.org/obo/AGRO_00000023</li><li>For more specific types of pest control please its respective sub classes.</li></ul>
+|Fertilizer application |<ul><li>For fertilizer application processes please use http://purl.obolibrary.org/obo/AGRO_01000000.</li></ul>
+
+### 4. Examples
+***WIP***
+
+### 5. Validation
+***WIP***
+
+### 6. Feedback
+If you would like to provide feedback to FAIRagros, e.g. for proposing new core entities, new properties important for findability,  on definitions in the specification or to recommend additional semantic concepts for values, please use one of the following templates to create an issue in our Github repository. 
+- [Suggest a new type/entity](https://github.com/fairagro/core-metadata-specification/issues/new?template=type-entity-request.md)
+- [Suggest a new property](https://github.com/fairagro/core-metadata-specification/issues/new?template=property-request-.md)
+- [Suggest an update/change to a definition](https://github.com/fairagro/core-metadata-specification/issues/new?template=change-update-existing-definition.md)
+- 
+***WIP***- Template semantic concept values
+
+Issues will be discussed in FAIRagros Task Areas and Measures.
+If you are interested in joining the Agrischemas Working Group group, please contact its [mailinglist](mailto:agri-wg-bioschemas@listserv.dfn.de). 
 
