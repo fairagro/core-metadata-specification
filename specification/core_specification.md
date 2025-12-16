@@ -1168,12 +1168,11 @@ Use one of the following recommendations as a value for the intendedUse property
 ***WIP***
 
 ### 6. Feedback
-If you would like to provide feedback to FAIRagros, e.g. for proposing new core entities, new properties important for findability,  on definitions in the specification or to recommend additional semantic concepts for values, please use one of the following templates to create an issue in our Github repository. 
+If you would like to provide feedback to FAIRagros, e.g. for proposing new core entities, new properties important for findability,  on definitions in the specification or to recommend additional semantic concepts for values, please use one of the following templates to create an issue in FAIRagros metadata Github repository. 
 - [Suggest a new type/entity](https://github.com/fairagro/core-metadata-specification/issues/new?template=type-entity-request.md)
 - [Suggest a new property](https://github.com/fairagro/core-metadata-specification/issues/new?template=property-request-.md)
 - [Suggest an update/change to a definition](https://github.com/fairagro/core-metadata-specification/issues/new?template=change-update-existing-definition.md)
-- 
-***WIP***- Template semantic concept values
+- [Suggest a semantic concept for a property or values](https://github.com/fairagro/core-metadata-specification/issues/new?template=semantic-concept-request.md)
 
 Issues will be discussed in FAIRagros Task Areas and Measures.
 If you are interested in joining the Agrischemas Working Group group, please contact its [mailinglist](mailto:agri-wg-bioschemas@listserv.dfn.de). 
