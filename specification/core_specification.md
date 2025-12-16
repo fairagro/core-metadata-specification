@@ -119,10 +119,6 @@ Schema.org representation:
 	"@type": "https://schema.org/Dataset"
 }
 ```
-"
-#### 
-
- 1. List item
 
 #### 2.1.1 Title
 **Definition:** "The main title of the Dataset." (taken from DataVerse)
