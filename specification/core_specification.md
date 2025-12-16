@@ -1,5 +1,6 @@
 
 
+
 # FAIRagro metadata
 Version 1
 15.12.2025
@@ -7,7 +8,7 @@ Version 1
 ##  1. Introduction and motivation
 FAIRagro offers a metadata framework for publishing research datasets in the agrosystem domain and is meant to be implemented in data publication services as Research Data Infrastructures (RDIs) and data repositories.
 
-For generic metadata, the Publication Metadata Set builds on Schema.org and defines a set of types, properties and cardinalities and links between the types. 
+For generic metadata, the Publication Metadata Set builds on Schema.org and other standards ([DC Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/), [DCAT](https://www.w3.org/TR/vocab-dcat-3/)) and combines these to define a set of types, properties and cardinalities and links between the types. 
 
 Domain specific metadata is expressed through the Agrischemas framework. It additionaly builds [Bioschemas](https://bioschemas.org/) to add agricultural related information to [Dataset](https://schema.org/Dataset) metadata with a focus on increasing its findability. It uses existing [types](https://bioschemas.org/types/) and [properties](https://schema.org/Property) and recommends semantic concepts to achieve interoperability. It can be implemented in already existing Schema.org interfaces by mapping domain-specific information available in local data/metadata to structures described in this document. **Agrischemas offers a list of recommended types and properties for findability based on this approach.**
 
@@ -108,6 +109,12 @@ direction LR
 **Figure 1:** FAIRagros Publication Metadata Set generic types and their relations to each other. Mandatory properties of each type are marked with a "*".
 
 Cardinalities are defined in relation to their respective concepts. Example: A cardinality of "1" for a property does only apply, if an instance of its related concept exists. This doesn’t necessitate the existence of such an instance.
+
+The following namespaces are used:
+Schema.org: `http://schema.org/`
+DC Terms: `http://purl.org/dc/terms/`
+DCAT: `http://www.w3.org/ns/dcat#`
+
 
 ### 2.1 Dataset
 
