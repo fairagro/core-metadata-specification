@@ -32,25 +32,24 @@ direction LR
 
     class CreativeWork {
 	    - Type* [CreativeWork | Article | Book | Poster]
-	    - Title [Text]
 	    - Author [PersonOrganization]
 	    - Contributor [PersonOrganization]
+		- Title [Text]
 	    - Identifier* [Identifier]
 	    - URL [URL]
     }
 
     class DefinedTerm {
 	    - Term* [Text]
+		- Term description [Text]
 	    - Term URL [URL]
 	    - Code [Text]
-	    - Term description [Text]
 	    - Terminology [URL]
     }
 
     class Identifier {
 	    - Value* [Text]
-	    - Scheme [Text]
-	    - URL* [URL]
+	    - Scheme* [Text]
     }
 
     class DataCatalog {
@@ -77,16 +76,15 @@ direction LR
 	    - Format [Text]
 	    - Production date [Date | DateTime]
 	    - Distribution date [Date | DateTime]
-	    - Deposit date [Date | DateTime]
 	    - Update date [Date | DateTime]
 	    - Language [Text]
-	    - Data category [Text]
 	    - Access rights [Text]
 	    - Source RDI* [DataCatalog]
 	    - Has part [Dataset | CreativeWork]
 	    - Is part of [Dataset | CreativeWork]
 	    - Is based on [Dataset | CreativeWork]
 	    - Access type [Boolean]
+		- Spatial resolution [Text | xsd:decimal]
     }
 
     Dataset --> PersonOrganization
