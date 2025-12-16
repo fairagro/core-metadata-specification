@@ -1,4 +1,5 @@
 
+
 # FAIRagro metadata
 Version 1
 15.12.2025
@@ -1177,3 +1178,11 @@ If you would like to provide feedback to FAIRagros, e.g. for proposing new core 
 Issues will be discussed in FAIRagros Task Areas and Measures.
 If you are interested in joining the Agrischemas Working Group group, please contact its [mailinglist](mailto:agri-wg-bioschemas@listserv.dfn.de). 
 
+## Contributors
+
+(*Last Update: 2025-12-16*)
+
+## How to cite this page?
+Lastname, F. (2025). *FAIRagro metadata*. FARagro Knowledge Base. [](). Under: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).  
+
+[![CC BY Logo](./images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/)
