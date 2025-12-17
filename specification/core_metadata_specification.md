@@ -1161,7 +1161,7 @@ If you are interested in joining the Agrischemas Working Group group, please con
 ## Contributors
 The Publication Metadata Set and Agrischemas are collaborative efforts within the FAIRagro consortium and adjacent communities. Contributors include participants from FAIRagro Task Areas [3](https://fairagro.net/fairagro_team_category/ta-3/), [4](https://fairagro.net/fairagro_team_category/ta-4/) and the ["Agri-schemas" project](https://github.com/Rothamsted/agri-schemas/tree/master) for Agrischemas.
 
-For feedback contact Gabriel Schneider ([schneiderg@zbmed.de](mailto:schneiderg@zbmed.de)) or the [Agrischemas mailinglist.](%5Bmailinglist%5D%28mailto:agri-wg-bioschemas@listserv.dfn.de%29)
+For feedback contact Gabriel Schneider ([schneiderg@zbmed.de](mailto:schneiderg@zbmed.de)) or the [Agrischemas mailinglist.](mailto:agri-wg-bioschemas@listserv.dfn.de)
 
 (*Last Update: 2025-12-16*)
 
