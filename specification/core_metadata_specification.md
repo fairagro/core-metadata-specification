@@ -529,7 +529,7 @@ Types and properties from following namespaces are used:
 **Definition:** "Defines if an entity is a person or an organization."
 <br>**Cardinality:** 1
 <br>**Range:**[https://schema.org/Person](https://schema.org/Person) / [https://schema.org/Organization](https://schema.org/Organization)
-**Comment**: Choosing the correct type depends on the property it is used for as a value. For the "author" property, it will most likely be a [https://schema.org/Person](https://schema.org/Person), whereas it will most likely be a [https://schema.org/Organization](https://schema.org/Organization) as a value for the "affiliation" property.
+<br>**Comment**: Choosing the correct type depends on the property it is used for as a value. For the "author" property, it will most likely be a [https://schema.org/Person](https://schema.org/Person), whereas it will most likely be a [https://schema.org/Organization](https://schema.org/Organization) as a value for the "affiliation" property.
 
 
 **Representation:**
@@ -907,7 +907,7 @@ Types and properties from following namespaces are used:
 **Definition:** "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character." (Definition taken from [https://schema.org/box](https://schema.org/box))
 <br>**Cardinality:** 1
 <br>**Range:** Text
-**Comments:** [Schema.org](http://schema.org) uses the [https://schema.org/GeoShape](https://schema.org/GeoShape) type to attach geospatial information to a Place object, via the [https://schema.org/geo](https://schema.org/geo) property. A bounding box can then be attached to this object.
+**Comment:** [Schema.org](http://schema.org) uses the [https://schema.org/GeoShape](https://schema.org/GeoShape) type to attach geospatial information to a Place object, via the [https://schema.org/geo](https://schema.org/geo) property. A bounding box can then be attached to this object.
 
 **Representation:**
 ```
@@ -954,15 +954,15 @@ Types and properties from following namespaces are used:
 ```
 
 ## 3. Agrischemas
-### 3.1 Design principles and modeling conventions
-Agrischemas aims at efficiently reusing established resources, only extending these where necessary. In general, the framework builds on following modeling conventions:
-- Agrischemas uses a set of existing Schema.org / [Bioschemas](https://bioschemas.org/types/) types to represent its core entities. The corresponding type for each core entity is listed in its chapter. Instances of the core entities are typed via the "@type" property.
-- Instances of the core entities are linked to [Dataset](https://schema.org/Dataset) via the [about](https://schema.org/about) property.
-- For semantic enrichment, instances of the core entities are further typed via the [additionalType](https://schema.org/additionalType) property, referencing specific semantic concepts.
-- Agrischemas makes use of the [additionalProperty](https://schema.org/additionalProperty) property in combination with the [PropertyValue](https://schema.org/PropertyValue) type to construct properties increasing the findability of datasets.
-- By using the [propertyID](https://schema.org/propertyID) property, these constructed properties are semantically enriched.
-- Where possible Agrischemas recommends the use of controlled vocabularies/terminologies for values of properties.
-- If the value of a property is more complex than a string, Agrischemas uses the [valueReference](https://schema.org/valueReference) to provide a link to a semantic concept for the value.
+<b>Design principles and modeling conventions</b>
+Agrischemas aims at efficiently reusing established resources, only extending these where necessary. In general, the framework builds on following modeling conventions:<br>
+- Agrischemas uses a set of existing Schema.org / [Bioschemas](https://bioschemas.org/types/) types to represent its core entities. The corresponding type for each core entity is listed in its chapter. Instances of the core entities are typed via the "@type" property.<br>
+- Instances of the core entities are linked to [Dataset](https://schema.org/Dataset) via the [about](https://schema.org/about) property.<br>
+- For semantic enrichment, instances of the core entities are further typed via the [additionalType](https://schema.org/additionalType) property, referencing specific semantic concepts.<br>
+- Agrischemas makes use of the [additionalProperty](https://schema.org/additionalProperty) property in combination with the [PropertyValue](https://schema.org/PropertyValue) type to construct properties increasing the findability of datasets.<br>
+- By using the [propertyID](https://schema.org/propertyID) property, these constructed properties are semantically enriched.<br>
+- Where possible Agrischemas recommends the use of controlled vocabularies/terminologies for values of properties.<br>
+- If the value of a property is more complex than a string, Agrischemas uses the [valueReference](https://schema.org/valueReference) to provide a link to a semantic concept for the value.<br>
 
 An example metadata instance in Agrischemas could look like this:
 ```mermaid
@@ -1002,17 +1002,17 @@ A("Constructed property")--"maxValue"-->J("60")
 ```
 **Figure 3:** Soil sampling depth as an example for a constructed property.
 
-### 3.2 Core entities
-#### 3.2.1 Crop
-**Definition:** Plants cultivated for food, fiber, livestock fodder or other uses, usually sown and harvested during a single agricultural year.
-	- [Definition source](http://aims.fao.org/aos/agrovoc/c_1972)
-- **Type:** [BioSample](https://bioschemas.org/BioSample)
-- **Additional type:** http://purl.obolibrary.org/obo/AGRO_00000325
+### 3.1 Crop
+**Definition:** Plants cultivated for food, fiber, livestock fodder or other uses, usually sown and harvested during a single agricultural year.<br>
+	- [Definition source](http://aims.fao.org/aos/agrovoc/c_1972)<br>
+- **Type:** [BioSample](https://bioschemas.org/BioSample)<br>
+- **Additional type:** http://purl.obolibrary.org/obo/AGRO_00000325<br>
 
 A crop entity represents a sample of a specific plant or group of plants, sharing the same [taxonomic species](http://aims.fao.org/aos/agrovoc/c_331243), that are described in a dataset.
 
 Agrischemas recommends the following set of constructed properties to describe a crop entity:
-|ID|name| description |propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary
+
+|ID|name|description|propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary|
 |--|--|--|--|--|--|--|--|--|
 |CR_001|species|A group of organisms of common ancestry having common characteristics, that are able to reproduce only among themselves to produce fertile offspring and which are usually geographically distinct. It constitutes the fundamental rank in the taxonomic hierarchy.|http://aims.fao.org/aos/agrovoc/c_331243|/|/|/|/|AGROVOC concepts with the "has taxonomic rank" property with a value of [species](https://agrovoc.fao.org/browse/agrovoc/en/page/c_331243)
 |CR_002|variety|A plant grouping, within a single botanical taxon of the lowest known rank, defined by the reproducible expression of its distinguishing and other genetic characteristics. A formal rank in botanical taxonomic nomenclature|http://aims.fao.org/aos/agrovoc/c_1423211760123|/|/|/|/|/
@@ -1039,16 +1039,17 @@ For expressing pheontypic traits, we recommend using traits from the [Crop Ontol
 }				
 ```
 
-#### 3.2.2 Soil
- **Definition:** Upper layer of the earth in which plants grow.
-	- [Definition source](http://aims.fao.org/aos/agrovoc/c_7156)
-- **Type:** [Sample](https://bioschemas.org/Sample)
-- **Additional type:** http://aims.fao.org/aos/agrovoc/c_7156
+### 3.2 Soil
+ **Definition:** Upper layer of the earth in which plants grow.<br>
+	- [Definition source](http://aims.fao.org/aos/agrovoc/c_7156)<br>
+- **Type:** [Sample](https://bioschemas.org/Sample)<br>
+- **Additional type:** http://aims.fao.org/aos/agrovoc/c_7156<br>
 
 A soil entity represents a specific soil sample, that is described in a dataset, representative for a bigger unit of land.
 
 Agrischemas recommends the following set of constructed properties to describe a soil sample:
-|ID|name| description |propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary
+
+|ID|name|description|propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary|
 |--|--|--|--|--|--|--|--|--|
 |SO_001|soil texture|Soil texture (such as loam, sandy loam or clay) refers to the proportion of sand, silt and clay sized particles that make up the mineral fraction of the soil.|http://aims.fao.org/aos/agrovoc/c_7199|/|/|/|/|For USDA soil classification classes, use the following classes: [clay](https://lod.nal.usda.gov/nalt/26755), [silty clay](https://lod.nal.usda.gov/nalt/105830),[sandy clay](https://lod.nal.usda.gov/nalt/105829), [clay loam](https://lod.nal.usda.gov/nalt/26741), [silty clay loam](https://lod.nal.usda.gov/nalt/286875), [sandy clay loam](https://lod.nal.usda.gov/nalt/105828), [loam](https://lod.nal.usda.gov/nalt/50479), [silt loam](https://lod.nal.usda.gov/nalt/63100), [silt](https://lod.nal.usda.gov/nalt/63101), [sandy loam](https://lod.nal.usda.gov/nalt/62359), [loamy sand](https://lod.nal.usda.gov/nalt/105831), [sand](https://lod.nal.usda.gov/nalt/62360)
 |SO_002|reference group|The World Reference Base (WRB) is an international system for classification of soils. It was designed to cater for any soil in the world. WRB has come forth from an initiative of FAO and UNESCO, supported by UNEP and the International Union of Soil Sciences (IUSS).|http://aims.fao.org/aos/agrovoc/c_89f35c33|/|/|/|/|Use subclasses of the AGROVOC ["World Reference Base soil types"](http://aims.fao.org/aos/agrovoc/c_89f35c33) class 
@@ -1062,15 +1063,16 @@ Agrischemas recommends the following set of constructed properties to describe a
 
 If you want to represent additional soil properties, we recommend using subclasses of the AGROVOC [soil properties](http://aims.fao.org/aos/agrovoc/c_330883) concept.
 
-#### 3.2.3 Plot
-- **Definition:** An area of land, somehow related to a dataset, with a particular ownership, land use, or other characteristic.
-	 - [Definition source](http://aims.fao.org/aos/agrovoc/c_fdfbb37f) 
-- **Type:** [Place](https://schema.org/Place)
--  **Additional type:** http://aims.fao.org/aos/agrovoc/c_2894
+### 3.3 Plot
+- **Definition:** An area of land, somehow related to a dataset, with a particular ownership, land use, or other characteristic.<br>
+	 - [Definition source](http://aims.fao.org/aos/agrovoc/c_fdfbb37f)<br>
+- **Type:** [Place](https://schema.org/Place)<br>
+-  **Additional type:** http://aims.fao.org/aos/agrovoc/c_2894<br>
 
 A plot entity represents a single plot that is somehow related to a dataset.
 
 The following, existing properties are recommended to describe a plot:
+
 |Property|Expected type|Description|Cardinality|Controlled Vocabulary|
 |--|--|--|--|--|
 |name|[Text](https://schema.org/Text)|The name of the place.|MANY|/
@@ -1078,22 +1080,24 @@ The following, existing properties are recommended to describe a plot:
 
 - For **geo**: The geographical coordinates of a [Place](https://schema.org/Place) should be attached to it through a [GeoShape](https://schema.org/GeoShape) object by using the geo property. The [GeoShape](https://schema.org/GeoShape) type offers the [box](https://schema.org/box) property to attach a bounding box as a [Text](https://schema.org/Text) where the box is expressed as two points separated by a space character. The first point is the lower corner, the second point is the upper corner.
 
-|ID|name| description |propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary
+|ID|name|description|propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary|
 |--|--|--|--|--|--|--|--|--|
 |PL_001|crop yield|The amount of plant crop (such as cereal, grain or legume) harvested per unit area for a given time.|http://aims.fao.org/aos/agrovoc/c_10176|dt/ha|/|/|/|/
 |PL_002|elevation|Altitude, like elevation, is the distance above sea level.|http://aims.fao.org/aos/agrovoc/c_316|meter|http://purl.obolibrary.org/obo/UO_0000008|/|/|/
 |PL_003|plot size|The size of a specific plot measured in m².|http://aims.fao.org/aos/agrovoc/c_2893|square meter|http://purl.obolibrary.org/obo/UO_0000080|/|/|/
 |PL_004|spatial reference system|A spatial reference system (SRS) or coordinate reference system (CRS) is a framework used to precisely measure locations on the surface of Earth as coordinates.|https://www.commoncoreontologies.org/ont00000275|/|/|/|/|Please use [ESPG codes](https://epsg.io/), e.g. "EPSG:4326" for WGS 84, where possible 
-#### 3.2.4 Sensor
- - **Definition**: A device, somehow related to a dataset, that observes and measures a physical property of a natural phenomenon or man-made process and converts that measurement into a signal (chemical, electrical or other).
-	 - [Definition source](http://aims.fao.org/aos/agrovoc/c_28279)
- - **Type:**[Product](https://schema.org/Product)
- - **Additional type:** [Sensor](http://www.w3.org/ns/sosa/Sensor)
+
+### 3.4 Sensor
+ - **Definition**: A device, somehow related to a dataset, that observes and measures a physical property of a natural phenomenon or man-made process and converts that measurement into a signal (chemical, electrical or other).<br>
+	 - [Definition source](http://aims.fao.org/aos/agrovoc/c_28279)<br>
+ - **Type:**[Product](https://schema.org/Product)<br>
+ - **Additional type:** [Sensor](http://www.w3.org/ns/sosa/Sensor)<br>
 
 A sensor entity represents a specific sensor, that is described in a dataset, or was used to create measurements in it.
 
 The following, existing properties are recommended to describe a sensor:
-|ID|name| description |propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary
+
+|ID|name|description|propertyID|unitText|unitCode|minValue|maxValue|Controlled vocabulary|
 |--|--|--|--|--|--|--|--|--|
 |SE_001|is hosted by|Relation between a Sensor and the Platform that it is mounted on or hosted by.|https://www.w3.org/TR/vocab-ssn/#SOSAisHostedBy|/|/|/|/|
 |SE_002|activity type|Describes if the sensor is an active or a passive sensor.|/|/|/|/|/|"Active" or "Passive"
@@ -1101,11 +1105,11 @@ The following, existing properties are recommended to describe a sensor:
 |SE_004|band category|Describes if a sensor uses single, multi or hyper spectral bands.|/|/|/|/|/|<ul><li>single-band</li><li>multi-band</li><li>hyper-spectral</li><li> broadband</li></ul>
 |SE_004|spectral band|Describes a specific spectral band of a sensor|/|/|/|/|/|/
 
-#### 3.2.5 Agricultural process
-- **Definition**: A planned process which occurs in an agricultural field.
-	- [Definition source](http://purl.obolibrary.org/obo/AGRO_00002071)
- - **Type:** [LabProcess](https://bioschemas.org/LabProcess)
- - **Additional type:** [Agricultural process](http://purl.obolibrary.org/obo/AGRO_00002071)
+### 3.5 Agricultural process
+- **Definition**: A planned process which occurs in an agricultural field.<br>
+	- [Definition source](http://purl.obolibrary.org/obo/AGRO_00002071)<br>
+ - **Type:** [LabProcess](https://bioschemas.org/LabProcess)<br>
+ - **Additional type:** [Agricultural process](http://purl.obolibrary.org/obo/AGRO_00002071)<br>
 
 An agricultural process entity represents a specific agricultural process, that is described in a dataset, or was used was part of its creation.
 
@@ -1142,7 +1146,7 @@ Use one of the following recommendations as a value for the intendedUse property
 
 ## 4. Examples
 A full example metadata file for the Publication Metadata Set [can be found here](https://github.com/fairagro/core-metadata-specification/blob/main/exampleData/FAIRagro_Publication_Metadata_Set_example.json).
-A full example metadata file for the Agrischemas framework [can be found here](https://github.com/fairagro/core-metadata-specification/blob/main/exampleData/FAIRagro_Agrischemas_example.json).
+<br>A full example metadata file for the Agrischemas framework [can be found here](https://github.com/fairagro/core-metadata-specification/blob/main/exampleData/FAIRagro_Agrischemas_example.json).
 
 
 ## 5. Validation
@@ -1150,10 +1154,12 @@ Validation mechanisms for the specification are being worked on and will be rele
 
 ## 6. Feedback
 If you would like to provide feedback to FAIRagros, e.g. for proposing new core entities, new properties important for findability,  on definitions in the specification or to recommend additional semantic concepts for values, please use one of the following templates to create an issue in FAIRagros metadata Github repository. 
-- [Suggest a new type/entity](https://github.com/fairagro/core-metadata-specification/issues/new?template=type-entity-request.md)
-- [Suggest a new property](https://github.com/fairagro/core-metadata-specification/issues/new?template=property-request-.md)
-- [Suggest an update/change to a definition](https://github.com/fairagro/core-metadata-specification/issues/new?template=change-update-existing-definition.md)
-- [Suggest a semantic concept for a property or values](https://github.com/fairagro/core-metadata-specification/issues/new?template=semantic-concept-request.md)
+
+- [Suggest a new type/entity](https://github.com/fairagro/core-metadata-specification/issues/new?template=type-entity-request.md)<br>
+- [Suggest a new property](https://github.com/fairagro/core-metadata-specification/issues/new?template=property-request-.md)<br>
+- [Suggest an update/change to a definition](https://github.com/fairagro/core-metadata-specification/issues/new?template=change-update-existing-definition.md)<br>
+- [Suggest a semantic concept for a property or values](https://github.com/fairagro/core-metadata-specification/issues/new?template=semantic-concept-request.md)<br>
+
 
 Issues will be discussed in FAIRagros Task Areas and Measures.
 If you are interested in joining the Agrischemas Working Group group, please contact its [mailinglist](mailto:agri-wg-bioschemas@listserv.dfn.de). 
@@ -1163,9 +1169,9 @@ The Publication Metadata Set and Agrischemas are collaborative efforts within th
 
 For feedback contact Gabriel Schneider ([schneiderg@zbmed.de](mailto:schneiderg@zbmed.de)) or the [Agrischemas mailinglist.](mailto:agri-wg-bioschemas@listserv.dfn.de)
 
-(*Last Update: 2025-12-16*)
+(*Last Update: 2025-12-17*)
 
 ## How to cite this page?
-FAIRagro. *FAIRagro Core Metadata Specification*. FAIRagro Knowledge Base. [https://knowledgebase.fairagro.net/en/rdm/core_metadata_specification/](https://knowledgebase.fairagro.net/en/rdm/core_metadata_specification/). Under: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).  
+FAIRagro. *FAIRagro Core Metadata Specification*. FAIRagro Knowledge Base. [https://knowledgebase.fairagro.net/en/advanced/core_metadata_specification/](https://knowledgebase.fairagro.net/en/advanced/core_metadata_specification/). Under: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).  
 
-[![CC BY Logo](./images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/)
+[![CC BY Logo](../images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/)
