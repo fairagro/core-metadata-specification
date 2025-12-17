@@ -107,9 +107,11 @@ Cardinalities are defined in relation to their respective concepts.
 <br>**Example:** A cardinality of "1" for a property does only apply, if an instance of its related concept exists. This doesn’t necessitate the existence of such an instance.
 
 Types and properties from following namespaces are used:
-Schema.org: `https://schema.org/`
-DC Terms: `http://purl.org/dc/terms/`
-DCAT: `http://www.w3.org/ns/dcat#`
+<ul>
+<li>Schema.org: `https://schema.org/`</li>
+<li>DC Terms: `http://purl.org/dc/terms/`</li>
+<li>DCAT: `http://www.w3.org/ns/dcat#`</li>
+</ul>
 
 
 ### 2.1 Dataset
