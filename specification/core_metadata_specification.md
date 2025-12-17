@@ -139,8 +139,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.2 Alternative title
 **Definition:** "Either 1) a title commonly used to refer to the Dataset or 2) an abbreviation of the main title.” (taken from DataVerse)." (Definition taken from Dataverse)
-<br><br>**Cardinality:** 0-n
-<br><br>**Range:** Text
+<br>**Cardinality:** 0-n
+<br>**Range:** Text
 
 **Representation:**
 ```
