@@ -127,8 +127,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.1 Title
 **Definition:** "The main title of the Dataset." (Definition taken from Dataverse)
-<br><br>**Cardinality:** 1
-<br><br>**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 
 **Representation:**
 ```
