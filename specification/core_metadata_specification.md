@@ -108,9 +108,9 @@ Cardinalities are defined in relation to their respective concepts.
 
 Types and properties from following namespaces are used:
 <ul>
-<li>Schema.org: `https://schema.org/`</li>
-<li>DC Terms: `http://purl.org/dc/terms/`</li>
-<li>DCAT: `http://www.w3.org/ns/dcat#`</li>
+<li>Schema.org: https://schema.org/</li>
+<li>DC Terms: http://purl.org/dc/terms/</li>
+<li>DCAT: http://www.w3.org/ns/dcat#</li>
 </ul>
 
 
@@ -127,8 +127,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.1 Title
 **Definition:** "The main title of the Dataset." (Definition taken from Dataverse)
-**Cardinality:** 1
-**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 
 **Representation:**
 ```
