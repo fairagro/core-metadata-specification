@@ -127,8 +127,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.1 Title
 **Definition:** "The main title of the Dataset." (Definition taken from Dataverse)
-<br>**Cardinality:** 1
-<br>**Range:** Text
+<br><br>**Cardinality:** 1
+<br><br>**Range:** Text
 
 **Representation:**
 ```
@@ -139,8 +139,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.2 Alternative title
 **Definition:** "Either 1) a title commonly used to refer to the Dataset or 2) an abbreviation of the main title.” (taken from DataVerse)." (Definition taken from Dataverse)
-**Cardinality:** 0-n
-**Range:** Text
+<br><br>**Cardinality:** 0-n
+<br><br>**Range:** Text
 
 **Representation:**
 ```
@@ -150,8 +150,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.1.3 Author
 **Definition:** "The entity, e.g. a person or organization, that created the Dataset." (Definition taken from Dataverse)
-**Cardinality:** 1-n
-**Range:** Person/Organization
+<br>**Cardinality:** 1-n
+<br>**Range:** Person/Organization
 
 **Representation:**
 ```
@@ -176,8 +176,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.4 Point of Contact
 **Definition:** "The entity, e.g. a person or organization, that users of the Dataset can contact with questions." (Definition taken from Dataverse)
-**Cardinality:** 1-n
-**Range:** Person/Organization
+<br>**Cardinality:** 1-n
+<br>**Range:** Person/Organization
 **Comment:**  [Schema.org](http://schema.org) doesn’t offer a fitting property or type to express this role. The [https://schema.org/ContactPoint](https://schema.org/ContactPoint) type and its related [https://schema.org/contactPoint](https://schema.org/contactPoint) are meant to express a contact point for a person/organization, not to express a person/organization as a contact point, as it is defined in Dataverse. To still model this information, at least one person/organization related to a Dataset as an author or contributor, needs to be additionally typed by adding an [https://schema.org/additionalType](https://schema.org/additionalType) property with the value "Contact Point" to the person/organization metadata object.
 
 **Representation:**
@@ -197,8 +197,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.5 Contributor
 **Definition:** "The entity, such as a person or organization, responsible for collecting, managing, or otherwise contributing to the development of the Dataset." (Definition taken from Dataverse)
-**Cardinality:** 0-n
-**Range:** Person/Organization
+<br>**Cardinality:** 0-n
+<br>**Range:** Person/Organization
 
 **Representation:**
 ```
@@ -219,8 +219,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.6 Description
 **Definition:** "A summary describing the purpose, nature, and scope of the Dataset." (Definition taken from Dataverse)
-**Cardinality:** 1-n
-**Range:** Text
+<br>**Cardinality:** 1-n
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -230,8 +230,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.1.7 Subject
 **Definition:** "The area of study relevant to the Dataset." (Definition taken from Dataverse)
-**Cardinality:** 1-n
-**Range:** DefinedTerm
+<br>**Cardinality:** 1-n
+<br>**Range:** DefinedTerm
 **Comment:** Dataverse uses a fixed list of subjects it accepts. For the agricultural domain, everything would fall under "Agricultural Sciences". To express this information use [https://schema.org/about](https://schema.org/about), link it to a [https://schema.org/DefinedTerm](https://schema.org/DefinedTerm) instance and use AGROVOCs "agricultural sciences" concept ([http://aims.fao.org/aos/agrovoc/c_49876](http://aims.fao.org/aos/agrovoc/c_49876)) for its value.
 
 **Representation:**
@@ -250,8 +250,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.8 Identifier
 **Definition:** "A unique identifier for the Dataset (e.g. producer's or repository's identifier)." (changed from DataVerse "otherId" definition)
-**Cardinality:** 1-n
-**Range:** Identifier
+<br>**Cardinality:** 1-n
+<br>**Range:** Identifier
 **Comment:** This property is used to store the identifiers from original data sources such as Research Data Infrastructures. Compared to Dataverses "otherId" property, it is mandatory for the FAIRagro Publication Metadata Set.
 
 **Representation:**
@@ -264,8 +264,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.1.9 Keyword(s)
 **Definition:** "A key term that describes an important aspect of the Dataset and information about any controlled vocabulary used." (Definition taken from Dataverse)
-**Cardinality:** 1-n
-**Range:** DefinedTerm
+<br>**Cardinality:** 1-n
+<br>**Range:** DefinedTerm
 
 **Representation:**
 ```
@@ -278,8 +278,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.10 License
 **Definition:** "License defining the rights to (re-)use the dataset." (Definition taken from Dataverse)
-**Cardinality:** 1
-**Range:** URL
+<br>**Cardinality:** 1
+<br>**Range:** URL
 **Comment:** If possible, the "License" property should link to a record from the SPDX license list ([https://spdx.org/licenses/](https://spdx.org/licenses/)), a record from the Creative Commons license list ([https://creativecommons.org/share-your-work/cclicenses/](https://creativecommons.org/share-your-work/cclicenses/)) or to a separate ODRL compliant file.
 
 **Representation:**
@@ -291,8 +291,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.11 URL
 **Definition:** "An URL where one can view or access the data in the Dataset, e.g. the webpage of a Research Data Infrastructure." (changed from DataVerse "alternativeURL")
-**Cardinality:** 1
-**Range:** URL
+<br>**Cardinality:** 1
+<br>**Range:** URL
 
 **Representation:**
 ```
@@ -303,8 +303,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.12 Spatial coverage
 **Definition:** "The spatialCoverage of a Dataset indicates the place(s) which are the focus of the content." (Definition changed from Schema.org "[https://schema.org/spatialCoverage](https://schema.org/spatialCoverage)")
-**Cardinality:** 0-n
-**Range:** Place
+<br>**Cardinality:** 0-n
+<br>**Range:** Place
 
 **Representation:**
 ```
@@ -317,8 +317,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.13 Temporal coverage
 **Definition:** "The temporalCoverage of a Dataset indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date." (Definition changed from [https://schema.org/temporalCoverage](https://schema.org/temporalCoverage))
-**Cardinality:** 0-1
-**Range:** Text / DateTime
+<br>**Cardinality:** 0-1
+<br>**Range:** Text / DateTime
 
 **Representation:**
 ```
@@ -328,8 +328,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.1.14 Version
 **Definition:** "The version number of the dataset."
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -340,8 +340,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.15 Format
 **Definition:** "The file format(s) of the dataset."
-**Cardinality:** 0-n
-**Range:** Text
+<br>**Cardinality:** 0-n
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -352,8 +352,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.16 Production date
 **Definition:** "The date when the data were produced (not distributed, published, or archived)." (Definition taken from Dataverse)
-**Cardinality:** 0-1
-**Range:** Date or DateTime (ISO 8601)
+<br>**Cardinality:** 0-1
+<br>**Range:** Date or DateTime (ISO 8601)
 
 **Representation:**
 ```
@@ -364,8 +364,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.17 Distribution date
 **Definition:** "The date when the Dataset was made available for distribution/presentation." (Definition taken from Dataverse)
-**Cardinality:** 0-1
-**Range:** Date or DateTime (ISO 8601)
+<br>**Cardinality:** 0-1
+<br>**Range:** Date or DateTime (ISO 8601)
 
 **Representation:**
 ```
@@ -376,8 +376,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.18 Update date
 **Definition:** "The date on which the Dataset was most recently modified or when the item's entry was modified " (Definition changed from [https://schema.org/dateModified](https://schema.org/dateModified))
-**Cardinality:** 0-1
-**Range:** Date or DateTime (ISO 8601)
+<br>**Cardinality:** 0-1
+<br>**Range:** Date or DateTime (ISO 8601)
 
 **Representation:**
 ```
@@ -388,8 +388,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.19 Language
 **Definition:** "A language that the Dataset's files is written in." (Definition taken from Dataverse)
-**Cardinality:** 0-n
-**Range:** Text
+<br>**Cardinality:** 0-n
+<br>**Range:** Text
 **Comment:** Use language codes from [https://www.rfc-editor.org/info/bcp47](https://www.rfc-editor.org/info/bcp47).
 
 **Representation:**
@@ -401,8 +401,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.20 Access rights
 **Definition:** "Information about who accesses the resource or an indication of its security status." (taken from [http://purl.org/dc/terms/accessRights](http://purl.org/dc/terms/accessRights))
-**Cardinality:** 0-n
-**Range:** Text
+<br>**Cardinality:** 0-n
+<br>**Range:** Text
 **Comment:** Values for access rights statements can e.g. be "restricted", or "internal" or can come from a controlled vocabulary.
 
 **Representation:**
@@ -414,8 +414,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.21 Source RDI
 **Definition:** "The original Research Data Infrastructure that the dataset was published by."
-**Cardinality:** 1
-**Range:** DataCatalog
+<br>**Cardinality:** 1
+<br>**Range:** DataCatalog
 
 **Representation:**
 ```
@@ -428,8 +428,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.22 Has part
 **Definition:** "Indicates a Dataset or CreativeWork that is part of this item." (Definition changed from [https://schema.org/hasPart](https://schema.org/hasPart))
-**Cardinality:** 0-n
-**Range:** Dataset/CreativeWork
+<br>**Cardinality:** 0-n
+<br>**Range:** Dataset/CreativeWork
 
 **Representation:**
 ```
@@ -449,8 +449,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.1.23 Is part of
 **Definition:** "Indicates a Dataset or CreativeWork that this item." (Definition changed from [https://schema.org/isPartOf](https://schema.org/isPartOf))
-**Cardinality:** 0-n
-**Range:** Dataset/CreativeWork
+<br>**Cardinality:** 0-n
+<br>**Range:** Dataset/CreativeWork
 
 **Representation:**
 ```
@@ -471,8 +471,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.24 Is based on
 **Definition:** "A resource from which this Dataset is derived or from which it is a modification or adaptation. " (Definition changed from [https://schema.org/isBasedOn](https://schema.org/isBasedOn))
-**Cardinality:** 0-n
-**Range:** Dataset/CreativeWork
+<br>**Cardinality:** 0-n
+<br>**Range:** Dataset/CreativeWork
 
 **Representation:**
 ```
@@ -493,8 +493,8 @@ Types and properties from following namespaces are used:
 
 #### 2.1.25 Access type
 **Definition:** "A flag to signal that the item, event, or place is accessible for free." (Definition taken from [https://schema.org/isAccessibleForFree](https://schema.org/isAccessibleForFree))
-**Cardinality:** 0-1
-**Range:** Boolean
+<br>**Cardinality:** 0-1
+<br>**Range:** Boolean
 
 **Representation:**
 ```
@@ -510,8 +510,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.1.26 Spatial resolution
 **Definition:** "Minimum spatial separation resolvable in a dataset, measured in meters." (Definition taken from DCAT)
-**Cardinality:** 0-1
-**Range:** Text / [xsd:decimal](https://www.w3.org/TR/xmlschema11-2/#decimal)
+<br>**Cardinality:** 0-1
+<br>**Range:** Text / [xsd:decimal](https://www.w3.org/TR/xmlschema11-2/#decimal)
 
 **Representation:**
 ```
@@ -527,8 +527,8 @@ Types and properties from following namespaces are used:
 
 #### 2.2.1 Type
 **Definition:** "Defines if an entity is a person or an organization."
-**Cardinality:** 1
-**Range:**[https://schema.org/Person](https://schema.org/Person) / [https://schema.org/Organization](https://schema.org/Organization)
+<br>**Cardinality:** 1
+<br>**Range:**[https://schema.org/Person](https://schema.org/Person) / [https://schema.org/Organization](https://schema.org/Organization)
 **Comment**: Choosing the correct type depends on the property it is used for as a value. For the "author" property, it will most likely be a [https://schema.org/Person](https://schema.org/Person), whereas it will most likely be a [https://schema.org/Organization](https://schema.org/Organization) as a value for the "affiliation" property.
 
 
@@ -547,8 +547,8 @@ Types and properties from following namespaces are used:
 
 #### 2.2.2 Name
 **Definition:** "The name of the person or the organization." (Definition changed from Dataverse)
-**Cardinality:** 1
-**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -558,8 +558,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.2.3 Affiliation (Person)
 **Definition:** "The name of the organization the person is  affiliated with, e.g. an organization's name." (Definition changed from Dataverse)
-**Cardinality:** 1
-**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -572,8 +572,8 @@ Types and properties from following namespaces are used:
 
 #### 2.2.4 Identifier
 **Definition:** "Uniquely identifies a person/organization when paired with an identifier type." (changed from DataVerse)
-**Cardinality:** 1
-**Range:** Identifier
+<br>**Cardinality:** 1
+<br>**Range:** Identifier
 
 **Representation:**
 ```
@@ -586,8 +586,8 @@ Types and properties from following namespaces are used:
 
 #### 2.2.4 E-Mail
 **Definition:** "A person/organization contact email address." (Definition changed from Dataverse)
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -607,8 +607,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.3.1 Value
 **Definition:** "The value of an identifier."
-**Cardinality:** 1
-**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -619,8 +619,8 @@ Types and properties from following namespaces are used:
 
 #### 2.3.2 Scheme
 **Definition:** "The type of identifier (e.g. DOI, ORCID)." (Definition  changed from Dataverse)
-**Cardinality:** 1
-**Range:** Text / URL
+<br>**Cardinality:** 1
+<br>**Range:** Text / URL
 **Comment:** Use [https://schema.org/propertyID](https://schema.org/propertyID) to preferably point to a record in an identifier registry (e.g. [https://registry.identifiers.org/registry/orcid](https://registry.identifiers.org/registry/orcid)), the official namespace of an identifier (e.g. [https://orcid.org/](https://orcid.org/)) or provide a string value (e.g. "orcid").
 
 **Representation:**
@@ -643,8 +643,8 @@ Types and properties from following namespaces are used:
 
 #### 2.4.1 Term
 **Definition:** "A key term that describes important aspects of the Dataset." (Definition taken from Dataverse)
-**Cardinality:** 1
-**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -654,8 +654,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.4.2 Term description
 **Definition:** "A description/definition of the DefinedTerm. " (Definition changed from [https://schema.org/description](https://schema.org/description))
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -666,8 +666,8 @@ Types and properties from following namespaces are used:
 
 #### 2.4.3 Term URL
 **Definition:** "A URL that points to the web presence of the DefinedTerm" (Definition changed from Dataverse)
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -678,8 +678,8 @@ Types and properties from following namespaces are used:
 
 #### 2.4.4 Code
 **Definition:** "A code that identifies a term within a terminology." (Definition changed from [https://schema.org/termCode](https://schema.org/termCode))"
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -690,8 +690,8 @@ Types and properties from following namespaces are used:
 
 #### 2.4.5 Terminology
 **Definition:** "The controlled vocabulary used for the keyword term (e.g. AGROVOC, GEMET)." (Definition changed from Dataverse)
-**Cardinality:** 0-1
-**Range:** URL
+<br>**Cardinality:** 0-1
+<br>**Range:** URL
 
 **Representation:**
 ```
@@ -711,8 +711,8 @@ Types and properties from following namespaces are used:
 
 #### 2.5.1 Name
 **Definition:** "The name of a Research Data Infrastructure/DataCatalog."
-**Cardinality:** 1
-**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -723,8 +723,8 @@ Types and properties from following namespaces are used:
 
 #### 2.5.2 Identifier
 **Definition:** "The Identifier of a Research Data Infrastructure/DataCatalog"
-**Cardinality:** 0-1
-**Range:** Identifier
+<br>**Cardinality:** 0-1
+<br>**Range:** Identifier
 
 **Representation:**
 ```
@@ -736,8 +736,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.5.3 URL
 **Definition:** "The URL of a Research Data Infrastructure/DataCatalog."
-**Cardinality:** 1
-**Range:** URL
+<br>**Cardinality:** 1
+<br>**Range:** URL
 
 **Representation:**
 ```
@@ -751,8 +751,8 @@ Types and properties from following namespaces are used:
 
 #### 2.6.1 Type
 **Definition:** "The specific type of a creative work (e.g. an article, book)."
-**Cardinality:** 1
-**Range:** [https://schema.org/CreativeWork](https://schema.org/CreativeWork); [https://schema.org/Article](https://schema.org/Article); [https://schema.org/Book](https://schema.org/Book); [https://schema.org/Poster](https://schema.org/Poster)
+<br>**Cardinality:** 1
+<br>**Range:** [https://schema.org/CreativeWork](https://schema.org/CreativeWork); [https://schema.org/Article](https://schema.org/Article); [https://schema.org/Book](https://schema.org/Book); [https://schema.org/Poster](https://schema.org/Poster)
 
 **Comment:** Dataverse does not allow for the typisation of a related publication via a property, but [Schema.org](http://schema.org) does. [Schema.org](http://schema.org) offers different subtypes of [https://schema.org/CreativeWork](https://schema.org/CreativeWork). To guarantee consistent mapping to the correct fields in Dataverse this modeling via choosing a fitting type for the CreativeWork object in [Schema.org](http://schema.org) is necessary.
 
@@ -783,8 +783,8 @@ Types and properties from following namespaces are used:
 
 #### 2.6.2 Author
 **Definition:** "The entity, e.g. a person or organization, that created the CreativeWork" (Definition changed from Dataverse)
-**Cardinality:** 0-n
-**Range:** Person/Organization
+<br>**Cardinality:** 0-n
+<br>**Range:** Person/Organization
 
 **Representation:**
 ```
@@ -805,8 +805,8 @@ Types and properties from following namespaces are used:
 
 #### 2.6.3 Contributor
 **Definition:** "The entity, such as a person or organization, responsible for collecting, managing, or otherwise contributing to the development of the CreativeWork" (Definition changed from Dataverse)
-**Cardinality:** 0-n
-**Range:** Person/Organization
+<br>**Cardinality:** 0-n
+<br>**Range:** Person/Organization
 
 **Representation:**
 ```
@@ -827,8 +827,8 @@ Types and properties from following namespaces are used:
 
 #### 2.6.4 Title
 **Definition:** "The main title of a creative work."
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -838,8 +838,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.6.5 Identifier
 **Definition:** "An identifier of a creative work."
-**Cardinality:** 1
-**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -851,8 +851,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.6.6 URL
 **Definition:** "An URL of a creative work."
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -866,8 +866,8 @@ Types and properties from following namespaces are used:
 
 #### 2.7.1 Type
 **Definition:** "The specific type of a place (e.g. a city, country, state)."
-**Cardinality:** 0-1
-**Range:** [https://schema.org/City](https://schema.org/City); [https://schema.org/Country](https://schema.org/Country); [https://schema.org/State](https://schema.org/State)
+<br>**Cardinality:** 0-1
+<br>**Range:** [https://schema.org/City](https://schema.org/City); [https://schema.org/Country](https://schema.org/Country); [https://schema.org/State](https://schema.org/State)
 **Comment:** Dataverse doesn’t allow a typisation of different places, but [Schema.org](http://schema.org) does.  To guarantee consistent mapping to the correct fields in Dataverse (City, Country, State) this modeling via choosing a fitting type for the Place object in [Schema.org](http://schema.org) is necessary.
 
 **Representation:**
@@ -893,8 +893,8 @@ Types and properties from following namespaces are used:
 
 #### 2.7.2 Name
 **Definition:** "The name of a place."
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -905,8 +905,8 @@ Types and properties from following namespaces are used:
 
 #### 2.7.3 Bounding box
 **Definition:** "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character." (Definition taken from [https://schema.org/box](https://schema.org/box))
-**Cardinality:** 1
-**Range:** Text
+<br>**Cardinality:** 1
+<br>**Range:** Text
 **Comments:** [Schema.org](http://schema.org) uses the [https://schema.org/GeoShape](https://schema.org/GeoShape) type to attach geospatial information to a Place object, via the [https://schema.org/geo](https://schema.org/geo) property. A bounding box can then be attached to this object.
 
 **Representation:**
@@ -920,8 +920,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.7.4 Elevation
 **Definition:** "Altitude, like elevation, is the distance above sea level."
-**Cardinality:** 0-1
-**Range:** Text
+<br>**Cardinality:** 0-1
+<br>**Range:** Text
 
 **Representation:**
 ```
@@ -938,8 +938,8 @@ Types and properties from following namespaces are used:
 ```
 #### 2.7.5 Spatial reference system
 **Definition:** "The spatial reference system used for the measured geocoordinates."
-**Cardinality:** 0-1
-**Range:** Identifier
+<br>**Cardinality:** 0-1
+<br>**Range:** Identifier
 **Comment:** For the value of a spatial reference system please use EPSG codes where possible.
 **Representation:**
 ```
