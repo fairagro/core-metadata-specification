@@ -1,4 +1,5 @@
 
+
 # FAIRagro Core Metadata Specification
 Version 1.0
 ##  1. Introduction and motivation
@@ -99,7 +100,6 @@ direction LR
     CreativeWork --> Identifier
     Place --> Identifier
     DataCatalog --> Identifier
-```
 ```
 **Figure 1:** FAIRagros Publication Metadata Set types and their relations to each other. Mandatory properties of each type are marked with a "*".
 
