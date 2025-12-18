@@ -1,5 +1,3 @@
-
-
 # FAIRagro Core Metadata Specification
 Version 1.0
 ##  1. Introduction and motivation
@@ -12,95 +10,7 @@ Domain specific metadata is expressed through the Agrischemas framework. It addi
 These two components of FAIRagros metadata approach define a Core Metadata Specification to make required information available for FAIRagro services such as the [FAIRagro Search Hub](https://search-hub.fairagro.net/) which is based on [Dataverse](https://dataverse.org/). The Core Metadata Specification is harmonized with existing generic metadata standards as well as ongoing [NFDI](https://www.nfdi.de/) wide developments.
 
 ##  2. Publication Metadata Set
-```mermaid
-classDiagram
-direction LR
-    class PersonOrganization {
-	    - Type* [Person | Organization]
-	    - Name* [Text]
-	    - if Person; Affiliation* [Organization]
-	    - Identifier* [Identifier]
-	    - E-Mail [Text]
-    }
-
-    class Place {
-	    - Type [City | Country | State]
-	    - Name [Text]
-	    - Bounding box* [Text]
-	    - Elevation [Text]
-	    - Spatial reference system [Identifier]
-    }
-
-
-    class CreativeWork {
-	    - Type* [CreativeWork | Article | Book | Poster]
-	    - Author [PersonOrganization]
-	    - Contributor [PersonOrganization]
-		- Title [Text]
-	    - Identifier* [Identifier]
-	    - URL [URL]
-    }
-
-    class DefinedTerm {
-	    - Term* [Text]
-		- Term description [Text]
-	    - Term URL [URL]
-	    - Code [Text]
-	    - Terminology [URL]
-    }
-
-    class Identifier {
-	    - Value* [Text]
-	    - Scheme* [Text]
-    }
-
-    class DataCatalog {
-	    - Name* [Text]
-		- Identifier [Identifier]
-	    - URL* [URL]
-    }
-
-    class Dataset {
-	    - Title* [Text]
-	    - Alternative title [Text]
-	    - Author* [PersonOrganization]
-	    - Point of Contact* [PersonOrganization]
-	    - Contributor [PersonOrganization]
-	    - Description* [Text]
-	    - Subject* [DefinedTerm]
-	    - Identifier* [Identifier]
-	    - Keywords* [DefinedTerm]
-	    - License* [URL]
-	    - URL* [URL]
-	    - Spatial coverage [Place]
-		- Temporal coverage [DateTime | Text]
-	    - Version [Text]
-	    - Format [Text]
-	    - Production date [Date | DateTime]
-	    - Distribution date [Date | DateTime]
-	    - Update date [Date | DateTime]
-	    - Language [Text]
-	    - Access rights [Text]
-	    - Source RDI* [DataCatalog]
-	    - Has part [Dataset | CreativeWork]
-	    - Is part of [Dataset | CreativeWork]
-	    - Is based on [Dataset | CreativeWork]
-	    - Access type [Boolean]
-		- Spatial resolution [Text | xsd:decimal]
-    }
-
-    Dataset --> PersonOrganization
-    Dataset --> DefinedTerm
-    Dataset --> Identifier
-    Dataset --> CreativeWork
-    Dataset --> DataCatalog
-    Dataset --> Place
-    PersonOrganization --> Identifier
-    CreativeWork --> PersonOrganization
-    CreativeWork --> Identifier
-    Place --> Identifier
-    DataCatalog --> Identifier
-```
+![Publication Metadata Set Diagram](../images/Publication_Metadata_Set_Diagram.png)
 **Figure 1:** FAIRagros Publication Metadata Set types and their relations to each other. Mandatory properties of each type are marked with a "*".
 
 Cardinalities are defined in relation to their respective concepts. 
@@ -178,7 +88,7 @@ Types and properties from following namespaces are used:
 **Definition:** "The entity, e.g. a person or organization, that users of the Dataset can contact with questions." (Definition taken from Dataverse)
 <br>**Cardinality:** 1-n
 <br>**Range:** Person/Organization
-**Comment:**  [Schema.org](http://schema.org) doesn’t offer a fitting property or type to express this role. The [https://schema.org/ContactPoint](https://schema.org/ContactPoint) type and its related [https://schema.org/contactPoint](https://schema.org/contactPoint) are meant to express a contact point for a person/organization, not to express a person/organization as a contact point, as it is defined in Dataverse. To still model this information, at least one person/organization related to a Dataset as an author or contributor, needs to be additionally typed by adding an [https://schema.org/additionalType](https://schema.org/additionalType) property with the value "Contact Point" to the person/organization metadata object.
+<br>**Comment:**  [Schema.org](http://schema.org) doesn’t offer a fitting property or type to express this role. The [https://schema.org/ContactPoint](https://schema.org/ContactPoint) type and its related [https://schema.org/contactPoint](https://schema.org/contactPoint) are meant to express a contact point for a person/organization, not to express a person/organization as a contact point, as it is defined in Dataverse. To still model this information, at least one person/organization related to a Dataset as an author or contributor, needs to be additionally typed by adding an [https://schema.org/additionalType](https://schema.org/additionalType) property with the value "Contact Point" to the person/organization metadata object.
 
 **Representation:**
 ```
@@ -232,7 +142,7 @@ Types and properties from following namespaces are used:
 **Definition:** "The area of study relevant to the Dataset." (Definition taken from Dataverse)
 <br>**Cardinality:** 1-n
 <br>**Range:** DefinedTerm
-**Comment:** Dataverse uses a fixed list of subjects it accepts. For the agricultural domain, everything would fall under "Agricultural Sciences". To express this information use [https://schema.org/about](https://schema.org/about), link it to a [https://schema.org/DefinedTerm](https://schema.org/DefinedTerm) instance and use AGROVOCs "agricultural sciences" concept ([http://aims.fao.org/aos/agrovoc/c_49876](http://aims.fao.org/aos/agrovoc/c_49876)) for its value.
+<br>**Comment:** Dataverse uses a fixed list of subjects it accepts. For the agricultural domain, everything would fall under "Agricultural Sciences". To express this information use [https://schema.org/about](https://schema.org/about), link it to a [https://schema.org/DefinedTerm](https://schema.org/DefinedTerm) instance and use AGROVOCs "agricultural sciences" concept ([http://aims.fao.org/aos/agrovoc/c_49876](http://aims.fao.org/aos/agrovoc/c_49876)) for its value.
 
 **Representation:**
 ```
@@ -252,7 +162,7 @@ Types and properties from following namespaces are used:
 **Definition:** "A unique identifier for the Dataset (e.g. producer's or repository's identifier)." (changed from DataVerse "otherId" definition)
 <br>**Cardinality:** 1-n
 <br>**Range:** Identifier
-**Comment:** This property is used to store the identifiers from original data sources such as Research Data Infrastructures. Compared to Dataverses "otherId" property, it is mandatory for the FAIRagro Publication Metadata Set.
+<br>**Comment:** This property is used to store the identifiers from original data sources such as Research Data Infrastructures. Compared to Dataverses "otherId" property, it is mandatory for the FAIRagro Publication Metadata Set.
 
 **Representation:**
 ```
@@ -280,7 +190,7 @@ Types and properties from following namespaces are used:
 **Definition:** "License defining the rights to (re-)use the dataset." (Definition taken from Dataverse)
 <br>**Cardinality:** 1
 <br>**Range:** URL
-**Comment:** If possible, the "License" property should link to a record from the SPDX license list ([https://spdx.org/licenses/](https://spdx.org/licenses/)), a record from the Creative Commons license list ([https://creativecommons.org/share-your-work/cclicenses/](https://creativecommons.org/share-your-work/cclicenses/)) or to a separate ODRL compliant file.
+<br>**Comment:** If possible, the "License" property should link to a record from the SPDX license list ([https://spdx.org/licenses/](https://spdx.org/licenses/)), a record from the Creative Commons license list ([https://creativecommons.org/share-your-work/cclicenses/](https://creativecommons.org/share-your-work/cclicenses/)) or to a separate ODRL compliant file.
 
 **Representation:**
 ```
@@ -390,7 +300,7 @@ Types and properties from following namespaces are used:
 **Definition:** "A language that the Dataset's files is written in." (Definition taken from Dataverse)
 <br>**Cardinality:** 0-n
 <br>**Range:** Text
-**Comment:** Use language codes from [https://www.rfc-editor.org/info/bcp47](https://www.rfc-editor.org/info/bcp47).
+<br>**Comment:** Use language codes from [https://www.rfc-editor.org/info/bcp47](https://www.rfc-editor.org/info/bcp47).
 
 **Representation:**
 ```
@@ -403,7 +313,7 @@ Types and properties from following namespaces are used:
 **Definition:** "Information about who accesses the resource or an indication of its security status." (taken from [http://purl.org/dc/terms/accessRights](http://purl.org/dc/terms/accessRights))
 <br>**Cardinality:** 0-n
 <br>**Range:** Text
-**Comment:** Values for access rights statements can e.g. be "restricted", or "internal" or can come from a controlled vocabulary.
+<br>**Comment:** Values for access rights statements can e.g. be "restricted", or "internal" or can come from a controlled vocabulary.
 
 **Representation:**
 ```
@@ -621,7 +531,7 @@ Types and properties from following namespaces are used:
 **Definition:** "The type of identifier (e.g. DOI, ORCID)." (Definition  changed from Dataverse)
 <br>**Cardinality:** 1
 <br>**Range:** Text / URL
-**Comment:** Use [https://schema.org/propertyID](https://schema.org/propertyID) to preferably point to a record in an identifier registry (e.g. [https://registry.identifiers.org/registry/orcid](https://registry.identifiers.org/registry/orcid)), the official namespace of an identifier (e.g. [https://orcid.org/](https://orcid.org/)) or provide a string value (e.g. "orcid").
+<br>**Comment:** Use [https://schema.org/propertyID](https://schema.org/propertyID) to preferably point to a record in an identifier registry (e.g. [https://registry.identifiers.org/registry/orcid](https://registry.identifiers.org/registry/orcid)), the official namespace of an identifier (e.g. [https://orcid.org/](https://orcid.org/)) or provide a string value (e.g. "orcid").
 
 **Representation:**
 ```
@@ -754,7 +664,7 @@ Types and properties from following namespaces are used:
 <br>**Cardinality:** 1
 <br>**Range:** [https://schema.org/CreativeWork](https://schema.org/CreativeWork); [https://schema.org/Article](https://schema.org/Article); [https://schema.org/Book](https://schema.org/Book); [https://schema.org/Poster](https://schema.org/Poster)
 
-**Comment:** Dataverse does not allow for the typisation of a related publication via a property, but [Schema.org](http://schema.org) does. [Schema.org](http://schema.org) offers different subtypes of [https://schema.org/CreativeWork](https://schema.org/CreativeWork). To guarantee consistent mapping to the correct fields in Dataverse this modeling via choosing a fitting type for the CreativeWork object in [Schema.org](http://schema.org) is necessary.
+<br>**Comment:** Dataverse does not allow for the typisation of a related publication via a property, but [Schema.org](http://schema.org) does. [Schema.org](http://schema.org) offers different subtypes of [https://schema.org/CreativeWork](https://schema.org/CreativeWork). To guarantee consistent mapping to the correct fields in Dataverse this modeling via choosing a fitting type for the CreativeWork object in [Schema.org](http://schema.org) is necessary.
 
 **Representation:**
 ```
@@ -868,7 +778,7 @@ Types and properties from following namespaces are used:
 **Definition:** "The specific type of a place (e.g. a city, country, state)."
 <br>**Cardinality:** 0-1
 <br>**Range:** [https://schema.org/City](https://schema.org/City); [https://schema.org/Country](https://schema.org/Country); [https://schema.org/State](https://schema.org/State)
-**Comment:** Dataverse doesn’t allow a typisation of different places, but [Schema.org](http://schema.org) does.  To guarantee consistent mapping to the correct fields in Dataverse (City, Country, State) this modeling via choosing a fitting type for the Place object in [Schema.org](http://schema.org) is necessary.
+<br>**Comment:** Dataverse doesn’t allow a typisation of different places, but [Schema.org](http://schema.org) does.  To guarantee consistent mapping to the correct fields in Dataverse (City, Country, State) this modeling via choosing a fitting type for the Place object in [Schema.org](http://schema.org) is necessary.
 
 **Representation:**
 ```
@@ -907,7 +817,7 @@ Types and properties from following namespaces are used:
 **Definition:** "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character." (Definition taken from [https://schema.org/box](https://schema.org/box))
 <br>**Cardinality:** 1
 <br>**Range:** Text
-**Comment:** [Schema.org](http://schema.org) uses the [https://schema.org/GeoShape](https://schema.org/GeoShape) type to attach geospatial information to a Place object, via the [https://schema.org/geo](https://schema.org/geo) property. A bounding box can then be attached to this object.
+<br>**Comment:** [Schema.org](http://schema.org) uses the [https://schema.org/GeoShape](https://schema.org/GeoShape) type to attach geospatial information to a Place object, via the [https://schema.org/geo](https://schema.org/geo) property. A bounding box can then be attached to this object.
 
 **Representation:**
 ```
@@ -940,7 +850,7 @@ Types and properties from following namespaces are used:
 **Definition:** "The spatial reference system used for the measured geocoordinates."
 <br>**Cardinality:** 0-1
 <br>**Range:** Identifier
-**Comment:** For the value of a spatial reference system please use EPSG codes where possible.
+<br>**Comment:** For the value of a spatial reference system please use EPSG codes where possible.
 **Representation:**
 ```
 {
@@ -954,7 +864,7 @@ Types and properties from following namespaces are used:
 ```
 
 ## 3. Agrischemas
-<b>Design principles and modeling conventions</b>
+**Design principles and modeling conventions**<br>
 Agrischemas aims at efficiently reusing established resources, only extending these where necessary. In general, the framework builds on following modeling conventions:<br>
 - Agrischemas uses a set of existing Schema.org / [Bioschemas](https://bioschemas.org/types/) types to represent its core entities. The corresponding type for each core entity is listed in its chapter. Instances of the core entities are typed via the "@type" property.<br>
 - Instances of the core entities are linked to [Dataset](https://schema.org/Dataset) via the [about](https://schema.org/about) property.<br>
@@ -965,16 +875,7 @@ Agrischemas aims at efficiently reusing established resources, only extending th
 - If the value of a property is more complex than a string, Agrischemas uses the [valueReference](https://schema.org/valueReference) to provide a link to a semantic concept for the value.<br>
 
 An example metadata instance in Agrischemas could look like this:
-```mermaid
-	flowchart LR;
-	A(["Dataset"]) --"@type"-->B(["Schema.org: Dataset"])
-	A(["Dataset"])--"about"-->C(["Core Entity"])
-	C(["Core Entity x"]) --"@type"-->D(["Schema.org / Bioschemas type"])
-	C(["Core Entity x"]) --"additionalType"-->E(["Concept from external terminology"])
-	C(["Core Entity x"]) --"additionalProperty"-->G([" "])
-	G([" "])--"@type"-->H(["Schema.org: PropertyValue"])
-	G([" "])--... -->I(["..."])
-```
+![Publication Metadata Set Diagram](../images/Agrischemas_Modeling_Diagram.png)
 **Figure 2:** General structure of domain specific metadata in a Dataset metadata instance in Agrischemas.
 
 - For each property constructed via [additionalProperty](https://schema.org/additionalProperty), following properties are possibly used to define it:
@@ -988,18 +889,8 @@ An example metadata instance in Agrischemas could look like this:
 	- [maxValue](https://schema.org/maxValue): The maximum possible value of a specific measurement of a property.
 	- [valueReference](https://schema.org/valueReference): A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
 
-```mermaid
-flowchart LR;
-A("Constructed property")--"@type"-->B(["Schema.org: PropertyValue"])
-A("Constructed property")--"name"-->C("soil sampling depth")
-A("Constructed property")--"description"-->D("The depth at which a sample of soil is collected during a soil sampling process.")
-A("Constructed property")--"propertyID"-->E("http://purl.obolibrary.org/obo/AGRO_00000701")
-A("Constructed property")--"unitText"-->F("centimeter")
-A("Constructed property")--"unitCode"-->G("http://purl.obolibrary.org/obo/UO_0000015")
-A("Constructed property")--"value"-->H("20")
-A("Constructed property")--"minValue"-->I("0")
-A("Constructed property")--"maxValue"-->J("60")
-```
+![Publication Metadata Set Diagram](../images/Agrischemas_Example_Property_Diagram.png)
+<br>
 **Figure 3:** Soil sampling depth as an example for a constructed property.
 
 ### 3.1 Crop
@@ -1172,6 +1063,6 @@ For feedback contact Gabriel Schneider ([schneiderg@zbmed.de](mailto:schneiderg@
 (*Last Update: 2025-12-17*)
 
 ## How to cite this page?
-FAIRagro. *FAIRagro Core Metadata Specification*. FAIRagro Knowledge Base. [https://knowledgebase.fairagro.net/en/advanced/core_metadata_specification/](https://knowledgebase.fairagro.net/en/advanced/core_metadata_specification/). Under: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).  
+Schneider, G., Jung, J., Reinosch, N. & Martini, D. et al. *FAIRagro Core Metadata Specification*. FAIRagro Knowledge Base. [https://knowledgebase.fairagro.net/en/tech-guides/core_metadata_specification/](https://knowledgebase.fairagro.net/en/tech-guides/core_metadata_specification/). Under: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).  
 
 [![CC BY Logo](../images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/)
