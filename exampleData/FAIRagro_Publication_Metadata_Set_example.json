@@ -224,5 +224,6 @@
       "name": "An example article"
     }
   ],
-  "isAccessibleForFree": "True"
+  "isAccessibleForFree": "True",
+	"https://www.w3.org/ns/dcat#spatialResolutionInMeters":"100.5"
 }
