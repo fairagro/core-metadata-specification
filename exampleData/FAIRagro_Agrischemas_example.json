@@ -1,2 +1,256 @@
 {
+	"@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/"
+	},
+	"@type": "Dataset",
+  "name": "The main title of the dataset",
+	"about":[
+		{
+			"@context":"https://bioschemas.org/",
+			"@type":"BioSample",
+			"additionalType":"http://purl.obolibrary.org/obo/AGRO_00000325",
+			"additionalProperty":[
+				{
+					"@type": "PropertyValue",
+					"name": "Species",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_331243",
+					"description": "Height of plant from ground to top of spike, excluding awns.",
+					"value":"Triticum aestivum",
+					"valueReference":{
+						"@type": "DefinedTerm",
+						"url":"http://aims.fao.org/aos/agrovoc/c_7951",
+						"termCode":"c_7951",
+						"inDefinedTermSet":"http://aims.fao.org/aos/agrovoc"
+					}
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "Variety",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_1423211760123",
+					"description": "A plant grouping, within a single botanical taxon of the lowest known rank, defined by the reproducible expression of its distinguishing and other genetic characteristics. A formal rank in botanical taxonomic nomenclature.",
+					"value":"Absolut"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "Sowing date",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_16208",
+					"description": "Date of sowing.",
+					"value":"2024-11-19"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "Harvesting date",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_29464",
+					"description": "Date of harvest.",
+					"value":"2025-11-19"
+
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "Plant height",
+					"propertyID": "https://cropontology.org/rdf/CO_321:0000020",
+					"description": "Height of plant from ground to top of spike, excluding awns.",
+					"value":"110",
+					"unitText":"centimeter",
+					"unitCode":"http://purl.obolibrary.org/obo/UO_0000015"
+				}
+			]
+		},
+		{
+			"@context":"https://bioschemas.org/",
+			"@type":"Sample",
+			"additionalType":"http://aims.fao.org/aos/agrovoc/c_7156",
+			"additionalProperty":[
+				{
+					"@type": "PropertyValue",
+					"name": "Soil texture",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_7199",
+					"description": "Soil texture (such as loam, sandy loam or clay) refers to the proportion of sand, silt and clay sized particles that make up the mineral fraction of the soil.",
+					"value":"clay",
+					"valueReference":{
+						"@type": "DefinedTerm",
+						"url":"http://aims.fao.org/aos/agrovoc/c_15619",
+						"termCode":"c_15619",
+						"inDefinedTermSet":"http://aims.fao.org/aos/agrovoc"
+					}
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "Reference group",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_89f35c33",
+					"description": "The World Reference Base (WRB) is an international system for classification of soils. It was designed to cater for any soil in the world. WRB has come forth from an initiative of FAO and UNESCO, supported by UNEP and the International Union of Soil Sciences (IUSS).",
+					"value":"Lixisols",
+					"valueReference":{
+						"@type": "DefinedTerm",
+						"url":"http://aims.fao.org/aos/agrovoc/c_7283bd0a",
+						"termCode":"c_7283bd0a",
+						"inDefinedTermSet":"http://aims.fao.org/aos/agrovoc"
+					}
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "soil pH",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_34901",
+					"description": "Soil pH is a measure of the acidity or alkalinity of the soil. A pH value is actually a measure of hydrogen ion concentration. It is a ‘reverse’ scale in that a very acid soil has a low pH and a high hydrogen ion concentration.",
+					"value":"4.5",
+					"unitCode":"http://purl.obolibrary.org/obo/UO_0000196",
+					"unitText":"pH"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "bulk density",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_7167",
+					"description": "A sufficiently large volume of soil containing a large number of pores, such that the concept of mean global properties is applicable.",
+					"value":"1.5",
+					"unitCode":"http://purl.obolibrary.org/obo/UO_0000084",
+					"unitText":"g/cm3"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "sampling depth",
+					"propertyID": "http://purl.obolibrary.org/obo/AGRO_00000701",
+					"description": "The depth at which a sample of soil is collected during a soil sampling process."	,
+					"value":"30",
+					"unitCode":"http://purl.obolibrary.org/obo/UO_0000015",
+					"unitText":"centimeter"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "available water content",
+					"propertyID": "http://opendata.inrae.fr/thesaurusINRAE/c_6446",
+					"description": "Quantity of water present in the soil and usable by plants, classically defined as the difference between moisture at field capacity and moisture at wilting point.",
+					"value":"14",
+					"unitCode":"http://purl.obolibrary.org/obo/UO_0000016",
+					"unitText":"milimeter"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "organic carbon",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_389fe908",
+					"description": "Soil organic carbon (SOC) refers to the carbon held within the soil and is expressed as a percentage by weight (gC/Kg soil). Climatic shifts in temperature and precipitation have a major influence on the decomposition and amount of SOC stored within an ecosystem and that released into the atmosphere. Globally, the amount of carbon stored in soils is twice the amount that is stored in all terrestrial plants. Soil organic carbon (SOC) is essential for maintaining fertility, water retention, and plant production in terrestrial ecosystems. The amount of SOC stored within an ecosystem, is dependent on the quantity and quality of organic matter returned to the soil matrix, the soils ability to retain organic carbon (a function of texture and caption exchange capacity), and biotic influences of both temperature and precipitation. The global decline in SOC as a result of deforestation, shifting cultivation and arable cropping have made significant contributions to increased levels of atmospheric carbon dioxide (CO2).",
+					"value":"13",
+					"unitText":"gC/Kg"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "total carbon",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_24fb4269",
+					"description": "Content or amount of total carbon in soil, including organic carbon and carbon from lime.",
+					"value":"1.5",
+					"unitCode":"http://purl.obolibrary.org/obo/UO_0000187",
+					"unitText":"percent"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "total nitrogen",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_bdc779f4",
+					"description": "Content or amount of total nitrogen in soil.",
+					"value":"50",
+					"unitText":"mg/kg"
+				}
+			]
+		},
+		{
+			"@context":"https://schema.org/",
+			"@type":"Place",
+			"additionalType":"http://aims.fao.org/aos/agrovoc/c_2894",
+			"name":"Example plot 1",
+			"geo":{
+						"@type":"GeoShape",
+						"box":"14.074745, 52.466191 14.194221, 52.524686"
+						},
+			"additionalProperty":[
+				{
+					"@type": "PropertyValue",
+					"name": "crop yield",
+					"propertyID": "http://aims.fao.org/aos/agrovoc/c_10176",
+					"description": "The amount of plant crop (such as cereal, grain or legume) harvested per unit area for a given time.",
+					"value":"20",
+					"unitText":"dt/ha"
+				},
+				{
+						"@type":"PropertyValue",
+						"name":"elevation",
+						"description":"Altitude, like elevation, is the distance above sea level.",
+						"propertyID":"http://aims.fao.org/aos/agrovoc/c_316",
+						"unitText":"meter",
+						"unitCode":"http://purl.obolibrary.org/obo/UO_0000008",
+						"value":"65"
+				},
+				{
+						"@type":"PropertyValue",
+						"name":"plot size",
+						"description":"The size of a specific plot measured in m².",
+						"propertyID":"http://aims.fao.org/aos/agrovoc/c_2893",
+						"unitText":"square meter",
+						"unitCode":"http://purl.obolibrary.org/obo/UO_0000080",
+						"value":"600"
+				},
+				{
+						"@type":"PropertyValue",
+						"name":"spatial reference system",
+						"description":"The spatial reference system used for the measured geocoordinates.",
+						"propertyID":"https://www.commoncoreontologies.org/ont00000275",
+						"value":"EPSG:4326"
+				}
+			]
+		},
+		{
+			"@context":"https://schema.org/",
+			"@type":"Product",
+			"additionalType":"http://www.w3.org/ns/sosa/Sensor",
+			"additionalProperty":[
+				{
+						"@type":"PropertyValue",
+						"name":"is hosted by",
+						"description":"Relation between a Sensor and the Platform that it is mounted on or hosted by.",
+						"propertyID":"https://www.w3.org/TR/vocab-ssn/#SOSAisHostedBy",
+						"value":"UAV"
+				},
+				{
+						"@type":"PropertyValue",
+						"name":"activity type",
+						"description":"Describes if the sensor is an active or a passive sensor.",
+						"value":"Active"
+				},
+				{
+						"@type":"PropertyValue",
+						"name":"sensor type",
+						"description":"Describes what type of information the sensor measures.",
+						"value":"Optical sensor",
+						"valueReference":{
+							"@type": "DefinedTerm",
+							"url":"http://aims.fao.org/aos/agrovoc/c_08dded27",
+							"termCode":"c_08dded27",
+							"inDefinedTermSet":"http://aims.fao.org/aos/agrovoc"
+					}
+				},
+				{
+						"@type":"PropertyValue",
+						"name":"band category",
+						"description":"Describes if a sensor uses single, multi or hyper spectral bands.",
+						"value":"multi-band"
+				},
+				{
+						"@type":"PropertyValue",
+						"name":"spectral band",
+						"description":"Describes a specific spectral band of a sensor",
+						"value":["NIR","UV"]
+				}
+				
+				
+			]
+		},
+		{
+			"@context":"https://bioschemas.org/",
+			"@type":"LabProcess",
+      "additionalType":"http://purl.obolibrary.org/obo/AGRO_00002071",
+      "executesLabProtocol":
+          {
+              "@type": "LabProtocol",
+              "intendedUse":"http://purl.obolibrary.org/obo/AGRO_00020004"
+          }
+		}
+	]
 }
