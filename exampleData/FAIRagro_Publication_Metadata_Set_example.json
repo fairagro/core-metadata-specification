@@ -1,2 +1,228 @@
 {
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/"
+  },
+  "@type": "Dataset",
+  "name": "The main title of the dataset",
+  "alternativeHeadline": [
+    "A short title alternative"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "additionalType": "Contact Point",
+      "name": "John Doe",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "FAIRagro",
+        "identifier": {
+          "@type": "PropertyValue",
+          "value": "00r0qs524",
+          "propertyID": "https://registry.identifiers.org/registry/ror"
+        },
+        "email": "info@fairagro.net"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "value": "0000-0002-1825-0097",
+        "propertyID": "https://registry.identifiers.org/registry/orcid"
+      },
+      "email": "john.doe@example.org"
+    },
+    {
+      "@type": "Organization",
+      "name": "FAIRagro",
+      "identifier": {
+        "@type": "PropertyValue",
+        "value": "00r0qs524",
+        "propertyID": "https://registry.identifiers.org/registry/ror"
+      },
+      "email": "info@fairagro.net"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "name": "Jane Doe",
+      "identifier": {
+        "@type": "PropertyValue",
+        "value": "0000-0002-1584-4316",
+        "propertyID": "https://registry.identifiers.org/registry/orcid"
+      },
+      "email": "jane.doe@example.org"
+    }
+  ],
+  "description": [
+    "A description of the dataset. It should explain the contents of the dataset in a human readable way, so that users finding the dataset can decide if it is interesting to them."
+  ],
+  "about": [
+    {
+      "@type": "DefinedTerm",
+      "name": "agricultural sciences",
+      "description": "Agricultural science is a broad multidisciplinary field of biology that encompasses the parts of exact, natural, economic and social sciences that are used in the practice and understanding of agriculture.",
+      "url": "http://aims.fao.org/aos/agrovoc/c_49876",
+      "termCode": "c_49876",
+      "inDefinedTermSet": "http://aims.fao.org/aos/agrovoc"
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "value": "doi:10.5281/zenodo.7528172",
+      "propertyID": "https://registry.identifiers.org/registry/doi"
+    }
+  ],
+  "keywords": [
+    {
+      "@type": "DefinedTerm",
+      "name": "agriculture",
+      "description": "Agriculture or farming is the cultivation and breeding of animals, plants and fungi for food, fiber, biofuel, medicinal plants and other products used to sustain and enhance human life.",
+      "url": "http://aims.fao.org/aos/agrovoc/c_203",
+      "termCode": "c_203",
+      "inDefinedTermSet": "http://aims.fao.org/aos/agrovoc"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "research data management",
+      "url": "http://opendata.inrae.fr/thesaurusINRAE/c_23013",
+      "termCode": "c_23013",
+      "inDefinedTermSet": "http://opendata.inrae.fr/thesaurusINRAE/"
+    }
+  ],
+  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+  "url": "https://zenodo.org/records/7528172",
+  "spatialCoverage": [
+    {
+      "@type": "City",
+      "name": "Müncheberg",
+      "geo": {
+        "@type": "GeoShape",
+        "box": "14.074745, 52.466191 14.194221, 52.524686"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "elevation",
+          "description": "Altitude, like elevation, is the distance above sea level.",
+          "propertyID": "http://aims.fao.org/aos/agrovoc/c_316",
+          "unitText": "meter",
+          "unitCode": "http://purl.obolibrary.org/obo/UO_0000008",
+          "value": "65"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "spatial reference system",
+          "description": "The spatial reference system used for the measured geocoordinates.",
+          "propertyID": "https://www.commoncoreontologies.org/ont00000275",
+          "value": "EPSG:4326"
+        }
+      ]
+    },
+    {
+      "@type": "Country",
+      "name": "Germany",
+      "geo": [
+        {
+          "@type": "GeoShape",
+          "box": "5.98865807458, 47.3024876979 15.0169958839, 54.983104153"
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "elevation",
+          "description": "Altitude, like elevation, is the distance above sea level.",
+          "propertyID": "http://aims.fao.org/aos/agrovoc/c_316",
+          "unitText": "meter",
+          "unitCode": "http://purl.obolibrary.org/obo/UO_0000008",
+          "value": "237"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "spatial reference system",
+          "description": "The spatial reference system used for the measured geocoordinates.",
+          "propertyID": "https://www.commoncoreontologies.org/ont00000275",
+          "value": "EPSG:4326"
+        }
+      ]
+    },
+    {
+      "@type": "State",
+      "name": "Brandenburg",
+      "geo": [
+        {
+          "@type": "GeoShape",
+          "box": "53.56, 14.87 51.36, 11.28"
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "elevation",
+          "description": "Altitude, like elevation, is the distance above sea level.",
+          "propertyID": "http://aims.fao.org/aos/agrovoc/c_316",
+          "unitText": "meter",
+          "unitCode": "http://purl.obolibrary.org/obo/UO_0000008",
+          "value": "68"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "spatial reference system",
+          "description": "The spatial reference system used for the measured geocoordinates.",
+          "propertyID": "https://www.commoncoreontologies.org/ont00000275",
+          "value": "EPSG:25833"
+        }
+      ]
+    }
+  ],
+  "temporalCoverage": "2022 - 2023",
+  "version": "v1.0",
+  "encodingFormat": [
+    "application/zip",
+    "text/csv",
+    "application/json"
+  ],
+  "dateCreated": "2024-11-19",
+  "datePublished": "2025-11-19",
+  "dateModified": "2025-11-27",
+  "inLanguage": [
+    "de-DE"
+  ],
+  "http://purl.org/dc/terms/accessRights": [
+    "internal"
+  ],
+  "includedInDataCatalog": {
+    "@type": "DataCatalog",
+    "name": "OpenAgrar",
+    "identifier": {
+      "@type": "PropertyValue",
+      "value": "10.17616/R3XF45",
+      "propertyID": "https://registry.identifiers.org/registry/doi"
+    },
+    "url": "https://www.openagrar.de/"
+  },
+  "hasPart": [
+    {
+      "@type": "Dataset",
+      "name": "An example sub dataset"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "An example CreativeWork"
+    }
+  ],
+  "isPartOf": [
+    {
+      "@type": "Dataset",
+      "name": "An example super dataset"
+    }
+  ],
+  "isBasedOn": [
+    {
+      "@type": "Article",
+      "name": "An example article"
+    }
+  ],
+  "isAccessibleForFree": "True"
 }
