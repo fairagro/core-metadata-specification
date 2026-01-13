@@ -45,13 +45,22 @@
     {
       "@type": "Person",
       "name": "Jane Doe",
+			"affiliation": {
+        "@type": "Organization",
+        "name": "FAIRagro",
+        "identifier": {
+          "@type": "PropertyValue",
+          "value": "00r0qs524",
+          "propertyID": "https://registry.identifiers.org/registry/ror"
+        },
       "identifier": {
         "@type": "PropertyValue",
         "value": "0000-0002-1584-4316",
         "propertyID": "https://registry.identifiers.org/registry/orcid"
       },
       "email": "jane.doe@example.org"
-    }
+			}
+		}
   ],
   "description": [
     "A description of the dataset. It should explain the contents of the dataset in a human readable way, so that users finding the dataset can decide if it is interesting to them."
