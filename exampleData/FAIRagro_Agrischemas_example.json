@@ -15,7 +15,7 @@
 					"@type": "PropertyValue",
 					"name": "Species",
 					"propertyID": "http://aims.fao.org/aos/agrovoc/c_331243",
-					"description": "A group of organisms of common ancestry having common characteristics, that are able to reproduce only among themselves to produce fertile offspring and which are usually geographically distinct. It constitutes the fundamental rank in the taxonomic hierarchy..",
+					"description": "A group of organisms of common ancestry having common characteristics, that are able to reproduce only among themselves to produce fertile offspring and which are usually geographically distinct. It constitutes the fundamental rank in the taxonomic hierarchy.",
 					"value":"Triticum aestivum",
 					"valueReference":{
 						"@type": "DefinedTerm",
