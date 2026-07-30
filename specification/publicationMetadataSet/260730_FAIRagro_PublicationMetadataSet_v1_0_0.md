@@ -1,7 +1,7 @@
 ##  2. Publication Metadata Set
 *Version 1.0.0*; published on 2025-12-22
 
-![Publication Metadata Set Diagram](../../images/Publication_Metadata_Set_Diagram.png)
+![Publication Metadata Set Diagram](../../figures/Publication_Metadata_Set_Diagram.png)
 /// caption
 **Figure 1:** FAIRagros Publication Metadata Set types and their relations to each other. Mandatory properties of each type are marked with a “*”.
 ///

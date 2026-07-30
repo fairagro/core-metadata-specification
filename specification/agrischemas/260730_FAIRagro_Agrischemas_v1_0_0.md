@@ -14,7 +14,7 @@ Agrischemas aims at efficiently reusing established resources, only extending th
 
 An example metadata instance in Agrischemas could look like this:
 
-![Publication Metadata Set Diagram](../../images/Agrischemas_Modeling_Diagram.png)
+![Publication Metadata Set Diagram](../../figures/Agrischemas_Modeling_Diagram.png)
 /// caption
 **Figure 2:** General structure of domain specific metadata in a Dataset metadata instance in Agrischemas.
 ///
@@ -30,7 +30,7 @@ An example metadata instance in Agrischemas could look like this:
 	- [maxValue](https://schema.org/maxValue){:target="_blank"}: The maximum possible value of a specific measurement of a property.
 	- [valueReference](https://schema.org/valueReference){:target="_blank"}: A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement. Point to a [DefinedTerm](https://schema.org/DefinedTerm){:target="_blank"} object.
 
-![Publication Metadata Set Diagram](../../images/Agrischemas_Example_Property_Diagram.png)
+![Publication Metadata Set Diagram](../../figures/Agrischemas_Example_Property_Diagram.png)
 /// caption
 **Figure 3:** Soil sampling depth as an example for a constructed property.
 ///
