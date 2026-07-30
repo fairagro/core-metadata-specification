@@ -95,9 +95,7 @@ direction LR
     DataCatalog --> Identifier
 ```
 
-/// caption
 **Figure 1:** FAIRagros Publication Metadata Set types and their relations to each other. Mandatory properties of each type are marked with a “*”.
-///
 
 Cardinalities are defined in relation to their respective concepts.  
 **Example:** A cardinality of “1” for a property does only apply, if an instance of its related concept exists. This doesn’t necessitate the existence of such an instance.
