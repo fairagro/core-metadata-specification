@@ -17,3 +17,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/),
 
 ### Removed
 - Removed "Point of Contact" property. This property was required to guarantee validity of metadata instances towards Dataverse metadata requirements. To ease implementation instead of modeling it per dataset instance, where the information is rarely available, it will be generated for the FAIRagro Search Hub during metadata ingest by adding default contact point adresses on Research Data Infrastructure level instead of personal/dataset level.
+
+## [1.0.0] - 2025-12-22
+
+### Added
+- Initial version released via FAIRagro Knowledge Base (https://knowledgebase.fairagro.net/en/tech-guides/core_metadata_specification/#2-publication-metadata-set)
