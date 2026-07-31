@@ -1,5 +1,5 @@
 ##  2. Publication Metadata Set
-*Version 1.0.1*; published on 2025-07-30
+*Version 1.0.1*; updated on 2025-07-31
 
 ```mermaid
 ---

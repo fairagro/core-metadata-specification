@@ -492,7 +492,7 @@ Adam Shepherd, Matthew B. Jones, Stephen Richard, Nicholas Jarboe, Dave Vieglais
 }
 ```
 
-#### 2.1.25 Access typez
+#### 2.1.25 Access type
 **Definition:** “A flag to signal that the item, event, or place is accessible for free.” (Definition taken from [https://schema.org/isAccessibleForFree](https://schema.org/isAccessibleForFree){:target="_blank"})  
 **Cardinality:** 0-1  
 **Range:** Boolean
