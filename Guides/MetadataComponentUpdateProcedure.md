@@ -11,7 +11,13 @@ The new version number and the update date are changed in the header of the file
  - Changelog for the Publication Metadata Set: https://github.com/fairagro/core-metadata-specification/blob/main/specification/publicationMetadataSet/FAIRagro_PublicationMetadataSet_Changelog.md
  - Changelog for Agrischemas: https://github.com/fairagro/core-metadata-specification/blob/main/specification/agrischemas/FAIRagro_Agrischemas_Changelog.md
 
-Changelog entries follow the guidelines of https://keepachangelog.com/.
+Every change is documented in a changelog that is referenced at the canonical web page of the metadata component. The changelog follows principles of the (Keep a Changelog)[https://keepachangelog.com/] guide, collecting changes for each version and grouping them in the following categories:
+·	Added for new metadata elements 
+·	Changed for changes in existing definitions of metadata elements
+·	Deprecated for soon-to-be removed metadata elements
+·	Removed for now removed metadata elements
+·	Fixed for any minor fixes such as typos 
+Where possible, changes are linked to Github issues that document the development and decision process. The structure and scope of these processes depend on the specific metadata component.
 
 If necessary, generate new versions of the figures that are part of the metadata component by copying the Mermaid (https://mermaid.ai/) markup from the metadata component file into the Mermaid playground and then exporting the figure as a PNG. This PNG file will be used for making the figures available at publication. Store the PNG files inside the version folder and attach the version number to the end of the file name .
 
@@ -26,3 +32,4 @@ For each version being archived, a new folder is created in one of these archiva
 Replace the archive changelog file with the  updated changelog file of the metadata component.
 
 Afterwards the new version can be published via the Knowledge Base. Copy the contents of the new version file into the main page file https://github.com/fairagro/knowledgebase/blob/main/docs/tech-guides/core_metadata_specification/index.en.md, copy the updated figures into the images folder (https://github.com/fairagro/knowledgebase/tree/main/docs/images) and update the paths accordingly.
+
