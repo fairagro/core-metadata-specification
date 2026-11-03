@@ -12,11 +12,11 @@ The new version number and the update date are changed in the header of the file
  - Changelog for Agrischemas: https://github.com/fairagro/core-metadata-specification/blob/main/specification/agrischemas/FAIRagro_Agrischemas_Changelog.md
 
 Every change is documented in a changelog that is referenced at the canonical web page of the metadata component. The changelog follows principles of the [Keep a Changelog](https://keepachangelog.com/) guide, collecting changes for each version and grouping them in the following categories:
-·	Added for new metadata elements 
-·	Changed for changes in existing definitions of metadata elements
-·	Deprecated for soon-to-be removed metadata elements
-·	Removed for now removed metadata elements
-·	Fixed for any minor fixes such as typos 
+- Added for new metadata elements 
+- Changed for changes in existing definitions of metadata elements
+- Deprecated for soon-to-be removed metadata elements
+- Removed for now removed metadata elements
+- Fixed for any minor fixes such as typos 
 Where possible, changes are linked to Github issues that document the development and decision process. The structure and scope of these processes depend on the specific metadata component.
 
 If necessary, generate new versions of the figures that are part of the metadata component by copying the Mermaid (https://mermaid.ai/) markup from the metadata component file into the Mermaid playground and then exporting the figure as a PNG. This PNG file will be used for making the figures available at publication. Store the PNG files inside the version folder and attach the version number to the end of the file name .
