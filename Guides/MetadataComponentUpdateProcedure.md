@@ -11,7 +11,7 @@ The new version number and the update date are changed in the header of the file
  - Changelog for the Publication Metadata Set: https://github.com/fairagro/core-metadata-specification/blob/main/specification/publicationMetadataSet/FAIRagro_PublicationMetadataSet_Changelog.md
  - Changelog for Agrischemas: https://github.com/fairagro/core-metadata-specification/blob/main/specification/agrischemas/FAIRagro_Agrischemas_Changelog.md
 
-Every change is documented in a changelog that is referenced at the canonical web page of the metadata component. The changelog follows principles of the (Keep a Changelog)[https://keepachangelog.com/] guide, collecting changes for each version and grouping them in the following categories:
+Every change is documented in a changelog that is referenced at the canonical web page of the metadata component. The changelog follows principles of the [Keep a Changelog](https://keepachangelog.com/) guide, collecting changes for each version and grouping them in the following categories:
 ·	Added for new metadata elements 
 ·	Changed for changes in existing definitions of metadata elements
 ·	Deprecated for soon-to-be removed metadata elements
